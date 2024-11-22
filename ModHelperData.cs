@@ -43,9 +43,9 @@ public static class ModHelperData
 
          Q: Why is the mod so bad
 
-         A: I tried my best I don't really know C# so the quality of my mod won't be as good as other modders
+         A: I tried my best I don't really know C# (maybe I'll change that some day) so the quality of my mod won't be as good as other modders
          """;
 
-    public const string RepoOwner = "CamtheKirby"; // TODO add your github username hero, also in the download url in README.md
+    public const string RepoOwner = "CamLikesKirby"; // TODO add your github username hero, also in the download url in README.md
     public const string RepoName = "CamsPack"; // TODO add your repo name here, also in the download url in README.md
 }
