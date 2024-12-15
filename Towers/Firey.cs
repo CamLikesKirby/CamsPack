@@ -98,12 +98,12 @@ public class Laser2Display : ModDisplay
         Set2DTexture(node, "Laser2Display");
     }
 }
-public class FSB : ModTower<CamsPack.BfdiTowers>
+public class FSB : ModTower
 {
     public override string Portrait => "FireyBoxlcon";
     public override string Name => "Firey Speaker Box";
     public override string BaseTower => "DartMonkey-202";
-
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override bool DontAddToShop => true;
     public override int Cost => 0;
     public override bool Use2DModel => true;
@@ -130,11 +130,13 @@ public class FSB : ModTower<CamsPack.BfdiTowers>
     }
 }
 
-public class FSBG : ModTower<CamsPack.BfdiTowers>
+public class FSBG : ModTower
 {
     public override string Portrait => "FireyBoxGlcon";
     public override string Name => " Giant Firey Speaker Box";
     public override string BaseTower => "DartMonkey-302";
+
+    public override TowerSet TowerSet => TowerSet.Magic;
 
     public override bool DontAddToShop => true;
     public override int Cost => 0;
@@ -164,10 +166,11 @@ public class FSBG : ModTower<CamsPack.BfdiTowers>
 
 
 
-public class Firey : ModTower<CamsPack.BfdiTowers>
+public class Firey : ModTower
 {
-   // public override TowerSet TowerSet => TowerSet.Magic;
     public override string BaseTower => TowerType.DartMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override int Cost => 780;
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
@@ -176,6 +179,7 @@ public class Firey : ModTower<CamsPack.BfdiTowers>
 
     public override bool Use2DModel => true;
     public override string Icon => "FireyIcon";
+    public override bool DontAddToShop => !Settings.OST == true;
     public override ParagonMode ParagonMode => ParagonMode.Base555;
     public override string Portrait => "FireyIcon2";
 
@@ -190,10 +194,6 @@ public class Firey : ModTower<CamsPack.BfdiTowers>
         var Fire = Game.instance.model.GetTower(TowerType.MortarMonkey, 0, 0, 2).GetAttackModel().weapons[0].projectile.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.GetBehavior<AddBehaviorToBloonModel>();
         attackModel.weapons[0].projectile.AddBehavior(Fire);
         attackModel.weapons[0].projectile.collisionPasses = new[] { -1, 0 };
-    }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
     }
 
    /* public override bool IsValidCrosspath(int[] tiers)

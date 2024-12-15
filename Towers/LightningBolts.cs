@@ -13,20 +13,22 @@ using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using System.Collections.Generic;
 using System.Linq;
 using Il2Cpp;
+using CamsPack;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace LightningBolts;
 
 
-public class LightningBolts : ModTower<CamsPack.CamsTowers>
+public class LightningBolts : ModTower
 {
-//    public override TowerSet TowerSet => TowerSet.Support;
+    public override TowerSet TowerSet => TowerSet.Support;
     public override string BaseTower => TowerType.DartMonkey;
     public override int Cost => 2450;
     public override int TopPathUpgrades => 0;
     public override int MiddlePathUpgrades => 0;
     public override int BottomPathUpgrades => 0;
+    public override bool DontAddToShop => !Settings.CT == true;
     public override string Description => "Place a lighting tower to strike out bloons on the screen.";
 
     public override bool Use2DModel => true;
@@ -45,10 +47,6 @@ public class LightningBolts : ModTower<CamsPack.CamsTowers>
         towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel", true));
         towerModel.towerSelectionMenuThemeId = "Camo";
         attackModel.weapons[0].projectile.pierce = 35;
-    }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.GlueGunner).towerIndex + 1;
     }
     public override string Get2DTexture(int[] tiers)
     {

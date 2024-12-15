@@ -161,9 +161,9 @@ public class MaxHatSDisplay : ModDisplay
         Set2DTexture(node, "MaxHatSDisplay");
     }
 }
-public class MaxLevelIdot : ModTower<YoutubeTowers>
+public class MaxLevelIdot : ModTower
 {
-   // public override TowerSet TowerSet => TowerSet.Primary;
+    public override TowerSet TowerSet => TowerSet.Military;
     public override string BaseTower => TowerType.BoomerangMonkey;
     public override int Cost => 700;
     public override int TopPathUpgrades => 5;
@@ -173,7 +173,7 @@ public class MaxLevelIdot : ModTower<YoutubeTowers>
 
     public override bool Use2DModel => true;
     public override string Icon => "MILIcon";
-
+    public override bool DontAddToShop => !Settings.YT == true;
     public override string Portrait => "MILIcon";
     public override ParagonMode ParagonMode => ParagonMode.Base555;
     public override void ModifyBaseTowerModel(TowerModel towerModel)
@@ -183,10 +183,7 @@ public class MaxLevelIdot : ModTower<YoutubeTowers>
      attackModel.weapons[0].projectile.GetDamageModel().damage = 2;
      attackModel.weapons[0].projectile.ApplyDisplay<MaxHatDisplay>();
     }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.DartlingGunner).towerIndex + 1;
-    }
+
   /*  public override bool IsValidCrosspath(int[] tiers)
     {
         if (!Settings.Crosspath)

@@ -84,9 +84,9 @@ public class StarRodBuffIcon : ModBuffIcon
     public override string Icon => "StarRodBuffIcon";
     public override int MaxStackSize => 1;
 }
-public class Kirby : ModTower<CamsPack.KirbyTowers>
+public class Kirby : ModTower
 {
-   // public override TowerSet TowerSet => TowerSet.Magic;
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override string BaseTower => TowerType.DartMonkey;
     public override int Cost => 385;
     public override int TopPathUpgrades => 5;
@@ -96,6 +96,7 @@ public class Kirby : ModTower<CamsPack.KirbyTowers>
 
     public override bool Use2DModel => true;
     public override string Icon => "Kiby2Icon";
+    public override bool DontAddToShop => !Settings.KT == true;
 
     public override string Portrait => "KirbyIcon";
     public override ParagonMode ParagonMode => ParagonMode.Base555;
@@ -107,11 +108,6 @@ public class Kirby : ModTower<CamsPack.KirbyTowers>
         attackModel.weapons[0].projectile.ApplyDisplay<NothingDisplay>();
         attackModel.weapons[0].projectile.pierce = 1;
         attackModel.weapons[0].rate *= .8f;
-    }
-
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
     }
 
    /* public override bool IsValidCrosspath(int[] tiers)

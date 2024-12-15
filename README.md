@@ -41,7 +41,7 @@ A: idk and I don't know how to fix that
 
 Q: Why is the mod so bad
 
-A: I tried my best I don't really know C# so the quality of my mod won't be as good as other modders
+A: I tried my best I don't really know C# so the quality of my mod won't be as good as other modders (maybe I'll change that some day)
 
 The Towers:
 

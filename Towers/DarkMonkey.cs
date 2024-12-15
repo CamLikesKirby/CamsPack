@@ -1,22 +1,18 @@
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
+using CamsPack;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
+using Kirby;
 using MelonLoader;
-using Il2CppNinjaKiwi.Common.ResourceUtils;
-using System;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using System.Collections.Generic;
 using System.Linq;
-using BTD_Mod_Helper;
-using CamsPack;
-using Kirby;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
 
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
@@ -42,19 +38,22 @@ public class CJugDisplay : ModDisplay
         Set2DTexture(node, "CJugDisplay");
     }
 }
-public class DarkMonkey : ModTower<CamsPack.JokeTowers>
+public class DarkMonkey : ModTower
 {
     // public override TowerSet TowerSet => TowerSet.Primary;
     public override string BaseTower => TowerType.DartMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Primary;
     public override int Cost => 875;
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "(THIS IS A JOKE TOWER) (Cursed Tower Made By u/PawaMV) According to all known laws of avaiation, there is no way a lead bloon should be able to fly. Its shell is too heavy to get its fat little body off the ground. The lead bloon, of course, flies anyway, because bloons don't care what monkeys think is impossible.";
+    public override string Description => "(THIS IS A JOKE TOWER IT WILL PROBABLY NOT BE BALANCED) (Cursed Tower Made By u/PawaMV) According to all known laws of avaiation, there is no way a lead bloon should be able to fly. Its shell is too heavy to get its fat little body off the ground. The lead bloon, of course, flies anyway, because bloons don't care what monkeys think is impossible.";
 
     public override string Icon => "DMIcon";
 
     public override string Portrait => "DMIcon";
+    public override bool DontAddToShop => !Settings.JT == true;
     public override ParagonMode ParagonMode => ParagonMode.Base555;
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
@@ -66,11 +65,6 @@ public class DarkMonkey : ModTower<CamsPack.JokeTowers>
         towerModel.range = 40;
         attackModel.weapons[0].projectile.pierce = 30;
         attackModel.weapons[0].projectile.GetDamageModel().damage = 4;
-    }
-
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.GlueGunner).towerIndex + 1;
     }
    /* public override bool IsValidCrosspath(int[] tiers)
     {
@@ -476,6 +470,9 @@ public class Sn00ferMaster : ModUpgrade<DarkMonkey>
         SSS.range = towerModel.range;
         SSS.name = "G_Weapon";
         towerModel.AddBehavior(SSS);
+        var projectile = attackModel.weapons[0].projectile;
+        towerModel.RemoveBehavior<TravelStraitModel>();
+        projectile.AddBehavior(new TravelStraitModel("TravelStraitModel_Projectile", 450, 1000));
     }
 
 }
@@ -490,6 +487,7 @@ public class ApexMemerMaster : ModParagonUpgrade<DarkMonkey>
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
+        var weaponModel = towerModel.GetWeapon();
         var Ability = Game.instance.model.GetTower(TowerType.DartMonkey, 0, 5, 0).GetAbilities()[0].Duplicate();
         Ability.maxActivationsPerRound = 9999999;
         Ability.canActivateBetweenRounds = true;
@@ -516,6 +514,8 @@ public class ApexMemerMaster : ModParagonUpgrade<DarkMonkey>
 
         towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel", true));
         towerModel.towerSelectionMenuThemeId = "Camo";
+        towerModel.RemoveBehavior<TravelStraitModel>();
+        weaponModel.projectile.AddBehavior(new TravelStraitModel("TravelStraitModel_Projectile", 150, 1000));
     }
 }
 

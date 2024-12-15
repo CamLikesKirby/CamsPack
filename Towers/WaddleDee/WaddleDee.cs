@@ -44,15 +44,18 @@ public class UmbrellaDisplay : ModDisplay
     }
 }
 
-public class WaddleDee : ModTower<KirbyTowers>
+public class WaddleDee : ModTower
 {
     //public override TowerSet TowerSet => TowerSet.Support;
     public override string BaseTower => TowerType.DartMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Primary;
     public override int Cost => 350;
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 0;
     public override string Description => "Aww Look it's a Waddle Dee!";
+    public override bool DontAddToShop => !Settings.KT == true;
 
     public override bool Use2DModel => true;
     public override string Icon => "WaddleIcon";
@@ -66,10 +69,6 @@ public class WaddleDee : ModTower<KirbyTowers>
         attackModel.weapons[0].projectile = Game.instance.model.GetTower(TowerType.DartMonkey).GetAttackModel().weapons[0].projectile.Duplicate();
         attackModel.weapons[0].projectile.ApplyDisplay<WahDisplay>();
         attackModel.weapons[0].rate *= .8f;
-    }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
     }
 
     /*public override bool IsValidCrosspath(int[] tiers)

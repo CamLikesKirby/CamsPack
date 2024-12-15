@@ -47,9 +47,9 @@ public class BSDisplay : ModDisplay
         Set2DTexture(node, "BSDisplay");
     }
 }
-public class MetaKnight : ModTower<CamsPack.KirbyTowers>
+public class MetaKnight : ModTower
 {
-   // public override TowerSet TowerSet => TowerSet.Magic;
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override string BaseTower => TowerType.NinjaMonkey;
     public override int Cost => 1100;
     public override int TopPathUpgrades => 5;
@@ -58,6 +58,7 @@ public class MetaKnight : ModTower<CamsPack.KirbyTowers>
     public override string Description => "The Star Warrior...";
 
     public override bool Use2DModel => true;
+    public override bool DontAddToShop => !Settings.KT == true;
     public override string Icon => "MetaKIcon";
 
     public override string Portrait => "MetaKIcon";
@@ -73,10 +74,7 @@ public class MetaKnight : ModTower<CamsPack.KirbyTowers>
         towerModel.range = Game.instance.model.GetTower(TowerType.Sauda).range;
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.Lead;
     }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
-    }
+
    /* public override bool IsValidCrosspath(int[] tiers)
     {
         if (!Settings.Crosspath)

@@ -19,7 +19,7 @@ namespace Kirbybloons;
 
 public class Kirbyb : ModBloon
 {
-    public override string BaseBloon => BloonType.Pink;
+    public override string BaseBloon => BTD_Mod_Helper.Api.Enums.BloonType.Pink;
 
 
     public override void ModifyBaseBloonModel(BloonModel bloonModel)
@@ -34,10 +34,10 @@ public class Kirbyb : ModBloon
      
 
         bloonModel.RemoveAllChildren();
-        bloonModel.AddToChildren(BloonType.Pink);
-        bloonModel.AddToChildren(BloonType.PinkCamo);
-        bloonModel.AddToChildren(BloonType.PinkRegrow);
-        bloonModel.AddToChildren(BloonType.PinkRegrowCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Pink);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PinkCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PinkRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PinkRegrowCamo);
 
         bloonModel.hasChildrenWithDifferentTotalHealths = true;
         bloonModel.distributeDamageToChildren = false;
@@ -46,7 +46,7 @@ public class Kirbyb : ModBloon
 
 public class MetaKnightb : ModBloon
 {
-    public override string BaseBloon => BloonType.Blue;
+    public override string BaseBloon => BTD_Mod_Helper.Api.Enums.BloonType.Blue;
 
 
     public override void ModifyBaseBloonModel(BloonModel bloonModel)
@@ -62,12 +62,12 @@ public class MetaKnightb : ModBloon
 
 
         bloonModel.RemoveAllChildren();
-        bloonModel.AddToChildren(BloonType.Yellow);
-        bloonModel.AddToChildren(BloonType.Yellow);
-        bloonModel.AddToChildren(BloonType.Red);
-        bloonModel.AddToChildren(BloonType.Lead);
-        bloonModel.AddToChildren(BloonType.Blue);
-        bloonModel.AddToChildren(BloonType.PurpleRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Yellow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Yellow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Red);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Lead);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Blue);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PurpleRegrow);
 
         bloonModel.hasChildrenWithDifferentTotalHealths = true;
         bloonModel.distributeDamageToChildren = false;
@@ -87,7 +87,7 @@ public class MetaKnightbCamo : ModBloon<MetaKnightb>
 
 public class Kingdededeb : ModBloon
 {
-    public override string BaseBloon => BloonType.Yellow;
+    public override string BaseBloon => BTD_Mod_Helper.Api.Enums.BloonType.Yellow;
 
 
     public override void ModifyBaseBloonModel(BloonModel bloonModel)
@@ -103,13 +103,13 @@ public class Kingdededeb : ModBloon
 
 
         bloonModel.RemoveAllChildren();
-        bloonModel.AddToChildren(BloonType.Yellow);
-        bloonModel.AddToChildren(BloonType.YellowRegrow);
-        bloonModel.AddToChildren(BloonType.Red);
-        bloonModel.AddToChildren(BloonType.BlackRegrow);
-        bloonModel.AddToChildren(BloonType.Blue);
-        bloonModel.AddToChildren(BloonType.WhiteRegrow);
-        bloonModel.AddToChildren(BloonType.WhiteRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Yellow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.YellowRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Red);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.BlackRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Blue);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.WhiteRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.WhiteRegrow);
 
         bloonModel.hasChildrenWithDifferentTotalHealths = true;
         bloonModel.distributeDamageToChildren = false;
@@ -118,7 +118,7 @@ public class Kingdededeb : ModBloon
 
 public class Waddledeeb : ModBloon
 {
-    public override string BaseBloon => BloonType.Pink;
+    public override string BaseBloon => BTD_Mod_Helper.Api.Enums.BloonType.Pink;
 
 
     public override void ModifyBaseBloonModel(BloonModel bloonModel)
@@ -154,7 +154,7 @@ public class Waddledoob : ModBloon<Waddledeeb>
 
 public class GalactaKnightb : ModBloon
 {
-    public override string BaseBloon => BloonType.Yellow;
+    public override string BaseBloon => BTD_Mod_Helper.Api.Enums.BloonType.Yellow;
 
    
     public override void ModifyBaseBloonModel(BloonModel bloonModel)
@@ -170,14 +170,14 @@ public class GalactaKnightb : ModBloon
 
 
         bloonModel.RemoveAllChildren();
-        bloonModel.AddToChildren(BloonType.Pink);
-        bloonModel.AddToChildren(BloonType.PinkRegrow);
-        bloonModel.AddToChildren(BloonType.White);
-        bloonModel.AddToChildren(BloonType.PinkRegrowCamo);
-        bloonModel.AddToChildren(BloonType.YellowRegrowCamo);
-        bloonModel.AddToChildren(BloonType.LeadRegrow);
-        bloonModel.AddToChildren(BloonType.LeadRegrowCamo);
-        bloonModel.AddToChildren(BloonType.PurpleCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.Pink);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PinkRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.White);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PinkRegrowCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.YellowRegrowCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.LeadRegrow);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.LeadRegrowCamo);
+        bloonModel.AddToChildren(BTD_Mod_Helper.Api.Enums.BloonType.PurpleCamo);
 
         bloonModel.hasChildrenWithDifferentTotalHealths = true;
         bloonModel.distributeDamageToChildren = false;

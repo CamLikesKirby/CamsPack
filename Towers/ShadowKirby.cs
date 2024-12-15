@@ -34,15 +34,15 @@ public class SKirbyBuffIcon : ModBuffIcon
     public override int MaxStackSize => 5;
 }
 
-public class ShadowKirby : ModTower<KirbyTowers>
+public class ShadowKirby : ModTower
 {
-    //public override TowerSet TowerSet => TowerSet.Magic;
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override string BaseTower => TowerType.SuperMonkey;
     public override int Cost => 1500000;
     public override int TopPathUpgrades => 0;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 0;
-    public override bool DontAddToShop => !Settings.OpTowers == true;
+    public override bool DontAddToShop => !Settings.OpTowers == true || !Settings.KT == true;
     public override string Description => "(This is the OP version of Shadow Kirby the balanced version will be in the next update) Shadow Kirby got some power and is now trying destory all bloons";
 
     public override bool Use2DModel => true;
@@ -65,12 +65,6 @@ public class ShadowKirby : ModTower<KirbyTowers>
         towerModel.GetWeapon().projectile.AddBehavior(new DamageModifierForTagModel("DamageModifierForTagModel", "Moabs", 1, 185, false, true));
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
     }
-
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
-    }
-
 
     public override string Get2DTexture(int[] tiers)
     {

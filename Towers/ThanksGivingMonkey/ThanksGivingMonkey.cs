@@ -206,10 +206,12 @@ public class TLBGDisplay : ModDisplay
     }
 }
 
-public class ThanksgivingMonkey : ModTower<CamsTowers>
+public class ThanksgivingMonkey : ModTower
 {
     
     public override string BaseTower => TowerType.DartMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Support;
     public override int Cost => 2335;
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
@@ -217,6 +219,7 @@ public class ThanksgivingMonkey : ModTower<CamsTowers>
     public override string Description => "It's Thanksgiving time!";
   //  public override bool DontAddToShop => !Settings.UselessTowers == true;
     public override bool Use2DModel => true;
+    public override bool DontAddToShop => !Settings.CT == true;
     public override ParagonMode ParagonMode => ParagonMode.Base555;
     public override string Icon => "TGIcon";
 
@@ -230,10 +233,6 @@ public class ThanksgivingMonkey : ModTower<CamsTowers>
         attackModel.weapons[0].projectile.GetDamageModel().damage = 4;
         attackModel.weapons[0].projectile.pierce += 7;
         attackModel.weapons[0].rate -= 0.3f;
-    }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.GlueGunner).towerIndex + 1;
     }
 
   /*  public override bool IsValidCrosspath(int[] tiers)

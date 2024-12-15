@@ -12,25 +12,29 @@ using System;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using System.Collections.Generic;
 using System.Linq;
+using CamsPack;
+using BTD_Mod_Helper.Api.Enums;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace CamsNinjaMonkey;
 
 
-public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
+public class CamsNinjaMonkey : ModTower
 {
   //  public override TowerSet TowerSet => TowerSet.Magic;
     public override string BaseTower => TowerType.NinjaMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Magic;
     public override int Cost => 570;
     public override int TopPathUpgrades => 0;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 0;
     public override string Description => "My Fav Upgrades In One Tower!";
+    public override bool DontAddToShop => !Settings.CT == true;
+    public override string Icon => VanillaSprites.NInjaMonkey000;
 
-    public override string Icon => "000NinjaMonkey";
-
-    public override string Portrait => "000NinjaMonkey";
+    public override string Portrait => VanillaSprites.NInjaMonkey000;
 
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
@@ -40,10 +44,6 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
         towerModel.range = 40;
         attackModel.weapons[0].projectile.pierce = 2;
         attackModel.weapons[0].projectile.GetDamageModel().damage = 2;
-    }
-    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
-    {
-        return towerSet.First(model => model.towerId == TowerType.GlueGunner).towerIndex + 1;
     }
     public class CamsNinjaMonkeyDisplay : ModTowerDisplay<CamsNinjaMonkey>
     {
@@ -61,8 +61,7 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
         }
         public class Knockback : ModUpgrade<CamsNinjaMonkey>
         {
-            // public override string Portrait => "Don't need to override this, using the default of Pair-Portrait.png";
-            // public override string Icon => "Don't need to override this, using the default of Pair-Icon.png";
+            public override string Icon => VanillaSprites.KnockbackUpgradeIcon;
             public override string Portrait => "LuigiIcon";
             public override int Path => MIDDLE;
             public override int Tier => 1;
@@ -75,10 +74,7 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 var attackModel = towerModel.GetAttackModel();
-                var Knockback = Game.instance.model.GetTowerFromId("NinjaMonkey-010").GetWeapon().projectile.GetBehavior<WindModel>().Duplicate<WindModel>();
-                Knockback.chance = 0.5f;
-                Knockback.distanceMin = 25;
-                Knockback.distanceMax = 50;
+                var Knockback = Game.instance.model.GetTowerFromId("SuperMonkey-001").GetWeapon().projectile.GetBehavior<KnockbackModel>().Duplicate<KnockbackModel>();
                 attackModel.weapons[0].projectile.AddBehavior(Knockback);
             }
 
@@ -105,8 +101,7 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
 
             public class ClusterBombs : ModUpgrade<CamsNinjaMonkey>
             {
-                // public override string Portrait => "Don't need to override this, using the default of Pair-Portrait.png";
-                // public override string Icon => "Don't need to override this, using the default of Pair-Icon.png";
+                public override string Icon => VanillaSprites.ClusterBombsUpgradeIcon;
                 public override string Portrait => "LuigiIcon";
                 public override int Path => MIDDLE;
                 public override int Tier => 3;
@@ -128,8 +123,7 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
             }
             public class ArcaneSpike : ModUpgrade<CamsNinjaMonkey>
             {
-                // public override string Portrait => "Don't need to override this, using the default of Pair-Portrait.png";
-                // public override string Icon => "Don't need to override this, using the default of Pair-Icon.png";
+                public override string Icon => VanillaSprites.ArcaneSpikeUpgradeIcon;
                 public override string Portrait => "LuigiIcon";
                 public override int Path => MIDDLE;
                 public override int Tier => 4;
@@ -150,8 +144,7 @@ public class CamsNinjaMonkey : ModTower<CamsPack.CamsTowers>
 
                 public class MAD : ModUpgrade<CamsNinjaMonkey>
                 {
-                    // public override string Portrait => "Don't need to override this, using the default of Pair-Portrait.png";
-                    // public override string Icon => "Don't need to override this, using the default of Pair-Icon.png";
+                    public override string Icon => VanillaSprites.MadUpgradeIcon;
                     public override string Portrait => "LuigiIcon";
                     public override int Path => MIDDLE;
                     public override int Tier => 5;
