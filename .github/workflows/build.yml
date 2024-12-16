@@ -87,6 +87,29 @@ jobs:
           repo: gurrenm3/BTD-Mod-Helper
           path: ${{ env.BLOONSTD6 }}/Mods/
 
+      - name: Download Latest PathsPlus
+        uses: robinraju/release-downloader@v1.4
+        if: env.MOD_HELPER_BRANCH == ''
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: doombubbles/paths-plus-plus
+          fileName: ${{ env.MOD_HELPER_NAME }}.dll
+          out-file-path: ${{ env.BLOONSTD6 }}/Mods/
+          tarBall: false
+          zipBall: false
+          latest: true
+
+      - name: Download Specific PathsPlus
+        uses: dawidd6/action-download-artifact@v2
+        if: env.MOD_HELPER_BRANCH != ''
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: build.yml
+          name: ${{ env.MOD_HELPER_NAME }}.dll
+          branch: ${{ env.MOD_HELPER_BRANCH }}
+          repo: doombubbles/paths-plus-plus
+          path: ${{ env.BLOONSTD6 }}/Mods/
+
 
       - name: Download btd6.targets
         shell: bash
