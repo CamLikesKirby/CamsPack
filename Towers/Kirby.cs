@@ -5,11 +5,13 @@ using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using CamsPack;
 using Il2Cpp;
+using Il2CppAssets.Scripts.Data.Behaviors.Weapons;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Weapons;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Simulation.Bloons.Behaviors;
 using Il2CppAssets.Scripts.Unity;
@@ -51,6 +53,16 @@ public class PunchDisplay : ModDisplay
     public override void ModifyDisplayNode(UnityDisplayNode node)
     {
         Set2DTexture(node, "PunchDisplay");
+    }
+}
+
+public class SparkDisplay : ModDisplay
+{
+    public override string BaseDisplay => Generic2dDisplay;
+
+    public override void ModifyDisplayNode(UnityDisplayNode node)
+    {
+       // Set2DTexture(node, "PunchDisplay");
     }
 }
 
@@ -110,14 +122,11 @@ public class Kirby : ModTower
         attackModel.weapons[0].rate *= .8f;
     }
 
-   /* public override bool IsValidCrosspath(int[] tiers)
+    public override bool IsValidCrosspath(int[] tiers)
     {
-        if (!Settings.Crosspath)
-        {
-            return false;
-        }
         return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-    } */
+    } 
+
     public override string Get2DTexture(int[] tiers)
     {
         if (tiers[0] == 3)
@@ -175,11 +184,11 @@ public class FastPunching : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 1;
-    public override int Cost => 150;
+    public override int Cost => 230;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Attacks Faster!";
+    public override string Description => "Kirby Attacks Faster";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -199,12 +208,12 @@ public class FasterPunching : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Attacks Even Faster!";
+    public override string Description => "Kirby Attacks Even Faster";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
-        attackModel.weapons[0].rate *= .5f;
+        attackModel.weapons[0].rate *= .65f;
     }
 }
 public class StrongPunching : ModUpgrade<Kirby>
@@ -214,11 +223,11 @@ public class StrongPunching : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 3;
-    public override int Cost => 600;
+    public override int Cost => 700;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Now Kirby Punching is Stronger!";
+    public override string Description => "Now Kirby Punching is Stronger by +2";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -235,7 +244,7 @@ public class FightingSenior : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 4;
-    public override int Cost => 2000;
+    public override int Cost => 5000;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
@@ -244,9 +253,9 @@ public class FightingSenior : ModUpgrade<Kirby>
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
-        attackModel.weapons[0].rate *= .4f;
-        attackModel.weapons[0].projectile.GetDamageModel().damage += 5;
-        attackModel.weapons[0].projectile.pierce += 10;
+        attackModel.weapons[0].rate *= .7f;
+        attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
+        attackModel.weapons[0].projectile.pierce += 4;
     }
 }
 
@@ -257,7 +266,7 @@ public class FightingMaster : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 5;
-    public override int Cost => 31500;
+    public override int Cost => 45000;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
@@ -268,7 +277,7 @@ public class FightingMaster : ModUpgrade<Kirby>
         var attackModel = towerModel.GetAttackModel();
         var weaponModel = towerModel.GetWeapon();
 
-        attackModel.weapons[0].projectile.GetDamageModel().damage += 35f;
+        attackModel.weapons[0].projectile.GetDamageModel().damage += 15f;
         attackModel.weapons[0].projectile.pierce += 30;
         // weaponModel.projectile.AddBehavior(new SlowModel("SlowModel_", 0.0f, .2f, "Stun:Weak", 9999999, "Stun", true, false, null, false, false, false, 0, false));
     }
@@ -285,7 +294,7 @@ public class Reach : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets More Range!";
+    public override string Description => "Kirby Gets More Range";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -302,11 +311,11 @@ public class MoreReach : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => MIDDLE;
     public override int Tier => 2;
-    public override int Cost => 350;
+    public override int Cost => 270;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets Even More Range and Camo Detection!";
+    public override string Description => "Kirby Gets Even More Range and Camo Detection";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -325,22 +334,22 @@ public class SingForMoney : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => MIDDLE;
     public override int Tier => 3;
-    public override int Cost => 1125;
+    public override int Cost => 1350;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Now Can Get Money! (And also gets more range, damage and pierce)";
+    public override string Description => "Kirby Now Can Get Money (And also gets more range, damage and pierce)";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
         var Money = Game.instance.model.GetTowerFromId("BananaFarm").GetAttackModel().Duplicate();
         Money.name = "BananaFarm_";
-        Money.weapons[0].projectile.GetBehavior<CashModel>().maximum = 35;
-        Money.weapons[0].projectile.GetBehavior<CashModel>().minimum = 30;
+        Money.weapons[0].projectile.GetBehavior<CashModel>().maximum = 50;
+        Money.weapons[0].projectile.GetBehavior<CashModel>().minimum = 50;
         towerModel.AddBehavior(Money);
         attackModel.range += 1f;
-        attackModel.weapons[0].projectile.GetDamageModel().damage = 2;
+        attackModel.weapons[0].projectile.GetDamageModel().damage += 1;
         towerModel.range += 1;
         attackModel.weapons[0].projectile.ApplyDisplay<NoteDisplay>();
         attackModel.weapons[0].projectile.pierce += 5;
@@ -353,11 +362,11 @@ public class SingingClub : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => MIDDLE;
     public override int Tier => 4;
-    public override int Cost => 27500;
+    public override int Cost => 35000;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Now Shoots His Music In All Directions! Can Buff Towers and With his ability he can attack faster!";
+    public override string Description => "Kirby Now Shoots His Music In All Directions, Can Buff Tower's Speed, and With his ability, attack faster!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -365,7 +374,7 @@ public class SingingClub : ModUpgrade<Kirby>
         var Wusic = Game.instance.model.GetTowerFromId("TackShooter-203").GetAttackModel().Duplicate();
         Wusic.range = towerModel.range;
         Wusic.name = "Wusic_Weapon";
-        Wusic.weapons[0].projectile.GetDamageModel().damage = 10;
+        Wusic.weapons[0].projectile.GetDamageModel().damage = 3;
         Wusic.weapons[0].projectile.ApplyDisplay<NoteDisplay>();
         towerModel.AddBehavior(Wusic);
 
@@ -402,7 +411,7 @@ public class SCREAM : ModUpgrade<Kirby>
     {
         var attackModel = towerModel.GetAttackModel();
         attackModel.weapons[0].rate = .5f;
-        attackModel.weapons[0].projectile.GetDamageModel().damage = 75;
+        attackModel.weapons[0].projectile.GetDamageModel().damage += 74;
         attackModel.weapons[0].projectile.pierce += 100;
         attackModel.range += 3;
         towerModel.range += 3;
@@ -435,7 +444,7 @@ public class FireAbility : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Fire Ability!";
+    public override string Description => "Kirby Gets The Fire Ability and burns bloons to the ground";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -459,11 +468,11 @@ public class BombAbility : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => BOTTOM;
     public override int Tier => 2;
-    public override int Cost => 4550;
+    public override int Cost => 4500;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Bomb Ability!";
+    public override string Description => "Kirby Gets The Bomb Ability! An slow attack that stuns bloons.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -476,8 +485,6 @@ public class BombAbility : ModUpgrade<Kirby>
         weapon.weapons[0].Rate = 8;
         weapon.name = "BombA";
         towerModel.AddBehavior(weapon);
-        towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel", true));
-        towerModel.towerSelectionMenuThemeId = "Camo";
     }
 
 }
@@ -489,17 +496,16 @@ public class TornadoAbility : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => BOTTOM;
     public override int Tier => 3;
-    public override int Cost => 7995;
+    public override int Cost => 1750;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Tornado Ability!";
+    public override string Description => "Kirby Gets The Tornado Ability";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
-        var Tornado = Game.instance.model.GetTowerFromId("Druid-300").GetAttackModel().Duplicate();
-        Tornado.range = towerModel.range;
+        var Tornado = Game.instance.model.GetTowerFromId("Druid-300").GetAttackModels()[1].Duplicate();
         Tornado.name = "Tornado_Weapon";
         towerModel.AddBehavior(Tornado);
         attackModel.weapons[0].projectile.pierce += 2;
@@ -516,20 +522,22 @@ public class SparkAbility : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => BOTTOM;
     public override int Tier => 4;
-    public override int Cost => 19959;
+    public override int Cost => 7000;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Spark Ability!";
+    public override string Description => "Kirby Gets The Spark Ability, shooting out a fast powerful eletric ball";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
-        var Spark = Game.instance.model.GetTowerFromId("Druid-400").GetAttackModel().Duplicate();
-        Spark.range = towerModel.range;
+        var Spark = Game.instance.model.GetTowerFromId("Druid-400").GetAttackModel().weapons.First(w => w.name == "WeaponModel_BallLightning").Duplicate(); // found a better way to get projectiles
         Spark.name = "Spark_Weapon";
-        towerModel.AddBehavior(Spark);
-        towerModel.GetWeapon().projectile.AddBehavior(new DamageModifierForTagModel("DamageModifierForTagModel", "Moabs", 1, 185, false, true));
+        Spark.RemoveBehavior<TravelStraitModel>();
+        Spark.projectile.AddBehavior(new TravelStraitModel("TravelStraitModel_Projectile", 150, 0.7f));
+        Spark.projectile.GetDamageModel().damage = 10;
+        //Spark.ApplyDisplay<SparkDisplay>()
+        attackModel.AddWeapon(Spark);
     }
 
 }
@@ -541,18 +549,18 @@ public class TheUltraSword : ModUpgrade<Kirby>
     public override string Portrait => "LuigiIcon";
     public override int Path => BOTTOM;
     public override int Tier => 5;
-    public override int Cost => 80000;
+    public override int Cost => 70000;
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets the Ultra Sword Holden by special entities";
+    public override string Description => "Kirby Gets the Ultra Sword that can slay through land like butter";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
         attackModel.range += 30;
         towerModel.range += 30;
-        attackModel.weapons[0].rate = .5f;
+        attackModel.weapons[0].rate *= .6f;
         attackModel.weapons[0].projectile.GetDamageModel().damage += 30;
         var Sword = Game.instance.model.GetTowerFromId("Sauda 20").GetAttackModel().Duplicate();
         Sword.name = "Sword_Weapon";
@@ -560,6 +568,12 @@ public class TheUltraSword : ModUpgrade<Kirby>
         Sword.weapons[0].projectile.GetDamageModel().damage += 6;
         Sword.weapons[0].projectile.pierce += 70;
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
+
+        foreach (var attacks in towerModel.GetAttackModels())
+        {
+            attacks.attackThroughWalls = true;
+            attacks.weapons[0].projectile.ignoreBlockers = true;
+        }
     }
 
 }
@@ -567,7 +581,7 @@ public class TheUltraSword : ModUpgrade<Kirby>
 public class StarRod : ModParagonUpgrade<Kirby>
 {
     public override int Cost => 450000;
-    public override string Description => "Holds power many want but can it deal with the bloons?";
+    public override string Description => "Gives peaceful dreams to the people of dreamland but does it have enough power to deal with the bloons?";
     public override string DisplayName => "The Star Rod";
 
     public override void ApplyUpgrade(TowerModel towerModel)

@@ -10,6 +10,20 @@ Nintendo (The Kirby characters), [jacknjellify](https://www.youtube.com/@BFDI) (
 
 I made everything else
 
+(NOTICE: This mod may be split into differnt mods again, and the github will be archived soon, so watch out for that!)
+
+ Everything I made in a pack!
+ Features:
+New Towers,
+New Paths, 
+New Bloons, and
+New Gamemodes 
+(DM on discord if there's any problems with this mod Discord: camthekirby)
+
+Credit: Nintendo (The Kirby characters), jacknjellify (Firey), u/PawaMV (The Dark Monkey Idea not the paragon), MaxLevelIdot (MaxLevelIdot)
+
+I made everything else
+
 QNA:
 
 Q: did you make this for/work for [insert youtuber]
@@ -20,13 +34,6 @@ Q: Can you add [tower idea]
 
 A: Maybe it depends on the idea
 
- ̶Q̶:̶ ̶W̶h̶y̶ ̶i̶s̶ ̶t̶h̶e̶ ̶d̶a̶r̶k̶ ̶m̶o̶n̶k̶e̶y̶ ̶n̶o̶t̶ ̶d̶a̶r̶k̶
-̶
-̶A̶:̶ ̶t̶h̶e̶ ̶t̶e̶x̶t̶u̶r̶e̶ ̶w̶a̶s̶n̶'̶t̶ ̶w̶o̶r̶k̶i̶n̶g̶ ̶f̶o̶r̶ ̶s̶o̶m̶e̶ ̶r̶e̶a̶s̶o̶n̶ ̶y̶o̶u̶ ̶c̶a̶n̶ ̶l̶o̶o̶k̶ ̶a̶t̶ ̶i̶t̶ ̶[here](https://github.com/CamLikesKirby/CamsPack/blob/1.6.1/Assets/DarkMonkey-Img/DarkMonkeyDisplay.png)
-̶
-
-(The Dark Monkey has its own texture now)
-
 Q: Why are there so many 2D towers and why are the towers blurry
 
 A: I don't know how to code in models or make them and they're blurry because I have to shrink them so the towers aren't big this might be changed in the future
@@ -34,14 +41,6 @@ A: I don't know how to code in models or make them and they're blurry because I 
 Q: You didn't make [insert tower] idea
 
 A: I did. I would have credited it if not
-
-Q: Why do the 2D towers rotate weirdly
-
-A: idk and I don't know how to fix that
-
-Q: Why is the mod so bad
-
-A: I tried my best I don't really know C# so the quality of my mod won't be as good as other modders (maybe I'll change that some day)
 
 The Towers:
 

@@ -36,6 +36,7 @@ namespace DarkMonkey.Displays
         {
             SetMeshTexture(node, "DarkMonkeyBlinkingDisplay");
             SetMeshTexture(node, Name, 1);
+
         }
     }
 

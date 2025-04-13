@@ -184,14 +184,10 @@ public class MaxLevelIdot : ModTower
      attackModel.weapons[0].projectile.ApplyDisplay<MaxHatDisplay>();
     }
 
-  /*  public override bool IsValidCrosspath(int[] tiers)
+    public override bool IsValidCrosspath(int[] tiers)
     {
-        if (!Settings.Crosspath)
-        {
-            return false;
-        }
         return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-    } */
+    }
     public override string Get2DTexture(int[] tiers)
     {
         return "MLIDisplay";

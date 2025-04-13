@@ -51,7 +51,7 @@ public class SandMonkey : ModTower
         towerModel.range = 40;
         attackModel.weapons[0].rate = 1.5f;
         var weaponModel = towerModel.GetWeapon();
-        weaponModel.projectile.AddBehavior(new SlowModel("SlowModel_", 0.0f, 1, "Stun:Weak", 9999999, "Stun", true, false, null, false, false, false, 0, false));
+        weaponModel.projectile.AddBehavior(new SlowModel("SlowModel_", 0.0f, 1, "Stun:Weak", 9999999, "Stun", true, false, null, false, false, false, 0));
     }
 
    /* public override bool IsValidCrosspath(int[] tiers)

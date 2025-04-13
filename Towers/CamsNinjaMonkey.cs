@@ -32,9 +32,9 @@ public class CamsNinjaMonkey : ModTower
     public override int BottomPathUpgrades => 0;
     public override string Description => "My Fav Upgrades In One Tower!";
     public override bool DontAddToShop => !Settings.CT == true;
-    public override string Icon => VanillaSprites.NInjaMonkey000;
+    public override string Icon => "000NinjaMonkey";
 
-    public override string Portrait => VanillaSprites.NInjaMonkey000;
+    public override string Portrait => "000NinjaMonkey";
 
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
@@ -61,7 +61,6 @@ public class CamsNinjaMonkey : ModTower
         }
         public class Knockback : ModUpgrade<CamsNinjaMonkey>
         {
-            public override string Icon => VanillaSprites.KnockbackUpgradeIcon;
             public override string Portrait => "LuigiIcon";
             public override int Path => MIDDLE;
             public override int Tier => 1;
@@ -101,7 +100,6 @@ public class CamsNinjaMonkey : ModTower
 
             public class ClusterBombs : ModUpgrade<CamsNinjaMonkey>
             {
-                public override string Icon => VanillaSprites.ClusterBombsUpgradeIcon;
                 public override string Portrait => "LuigiIcon";
                 public override int Path => MIDDLE;
                 public override int Tier => 3;
@@ -123,7 +121,6 @@ public class CamsNinjaMonkey : ModTower
             }
             public class ArcaneSpike : ModUpgrade<CamsNinjaMonkey>
             {
-                public override string Icon => VanillaSprites.ArcaneSpikeUpgradeIcon;
                 public override string Portrait => "LuigiIcon";
                 public override int Path => MIDDLE;
                 public override int Tier => 4;
@@ -144,7 +141,6 @@ public class CamsNinjaMonkey : ModTower
 
                 public class MAD : ModUpgrade<CamsNinjaMonkey>
                 {
-                    public override string Icon => VanillaSprites.MadUpgradeIcon;
                     public override string Portrait => "LuigiIcon";
                     public override int Path => MIDDLE;
                     public override int Tier => 5;

@@ -35,14 +35,7 @@ public class Settings : ModSettings
     private static readonly ModSettingCategory Misc = new("Misc")
     {
         collapsed = true
-    };
-    /* public static readonly ModSettingBool Crosspath = new(false)
-     {
-         displayName = "Ultimate Crosspathing",
-         description = "If you want ultimate crosspathing to be applied to every tower (RESTART GAME TO APPLY)",
-         requiresRestart = true,
-         button = true,
-     }; */
+    }; 
     public static readonly ModSettingBool CT = new(true)
     {
         category = TowerCategorys,
@@ -119,20 +112,6 @@ public class SabrePath : PathPlusPlus
 {
     public override string Tower => TowerType.BananaFarm;
     public override int UpgradeCount => 5;
-}
-
-public class WaddledeeMiddlePath : PathPlusPlus
-{
-    public override string Tower => ModContent.TowerID<WaddleDee.WaddleDee>(0, 0, 0);
-    public override int ExtendVanillaPath => 1;
-    public override int UpgradeCount => 6;
-}
-
-public class WaddledeeTopPath : PathPlusPlus
-{
-    public override string Tower => TowerID<WaddleDee.WaddleDee>(0, 0, 0);
-    public override int ExtendVanillaPath => 0;
-    public override int UpgradeCount => 7;
 }
 
 public class TGForthPath : PathPlusPlus

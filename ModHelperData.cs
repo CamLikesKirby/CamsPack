@@ -2,11 +2,13 @@ namespace CamsPack;
 
 public static class ModHelperData
 {
-    public const string WorksOnVersion = "46";
-    public const string Version = "1.6.3";
+    public const string WorksOnVersion = "48";
+    public const string Version = "1.6.4";
     public const string Name = "Cams Pack!";
     public const string Dependencies = "doombubbles/paths-plus-plus";
     public const string Description = """
+         (NOTICE: This mod may be split into differnt mods again, and the github will be archived soon, so watch out for that!)
+
          Everything I made in a pack!
          Features:
          New Towers,
@@ -36,14 +38,6 @@ public static class ModHelperData
          Q: You didn't make [insert tower] idea
 
          A: I did. I would have credited it if not
-
-         Q: Why do the 2D towers rotate weirdly
-
-         A: idk and I don't know how to fix that
-
-         Q: Why is the mod so bad
-
-         A: I tried my best I don't really know C# so the quality of my mod won't be as good as other modders (maybe I'll change that some day)
          """;
 
     public const string RepoOwner = "CamlikesKirby";

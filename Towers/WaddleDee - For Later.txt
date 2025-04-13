@@ -1,0 +1,74 @@
+using BTD_Mod_Helper.Api;
+using BTD_Mod_Helper.Api.Display;
+using BTD_Mod_Helper.Api.Towers;
+using BTD_Mod_Helper.Extensions;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Models.TowerSets;
+using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Unity.Display;
+using MelonLoader;
+using PathsPlusPlus;
+using CamsPack;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using Il2Cpp;
+using Il2CppAssets.Scripts.Models.Towers.Filters;
+using BTD_Mod_Helper;
+
+[assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
+
+namespace CamsPack.Towers;
+
+public class WahDisplay : ModDisplay
+{
+    public override string BaseDisplay => Generic2dDisplay;
+
+    public override void ModifyDisplayNode(UnityDisplayNode node)
+    {
+        Set2DTexture(node, "WahDisplay");
+    }
+}
+
+public class WaddleDee : ModTower
+{
+    //public override TowerSet TowerSet => TowerSet.Support;
+    public override string BaseTower => TowerType.DartMonkey;
+
+    public override TowerSet TowerSet => TowerSet.Primary;
+    public override int Cost => 350;
+   public override int TopPathUpgrades => 0;
+    public override int MiddlePathUpgrades => 0;
+    public override int BottomPathUpgrades => 0;
+    public override string Description => "Aww Look it's a Waddle Dee!";
+    public override bool DontAddToShop => !Settings.KT == true;
+
+    public override bool Use2DModel => true;
+    public override string Icon => "WaddleIcon";
+
+    public override string Portrait => "WaddleIcon";
+
+
+    public override void ModifyBaseTowerModel(TowerModel towerModel)
+    {
+        var attackModel = towerModel.GetAttackModel();
+        attackModel.weapons[0].projectile = Game.instance.model.GetTower(TowerType.DartMonkey).GetAttackModel().weapons[0].projectile.Duplicate();
+        attackModel.weapons[0].projectile.ApplyDisplay<WahDisplay>();
+        attackModel.weapons[0].rate *= .8f;
+    }
+    public override bool IsValidCrosspath(int[] tiers)
+    {
+        return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
+    }
+    public override string Get2DTexture(int[] tiers)
+    {
+        return "WaddleDisplay";
+    }
+
+}
+
+

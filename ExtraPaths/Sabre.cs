@@ -130,7 +130,7 @@ public class PayDay : UpgradePlusPlus<SabrePath>
     public override string Icon => "Paymeup";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "Gets $506 every round";
+    public override string Description => "Gets $506 every round (THIS IS A JOKE PATH)";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {

@@ -15,7 +15,6 @@ using Il2CppAssets.Scripts.Unity.Display;
 using MelonLoader;
 using static Il2CppSystem.TypeIdentifiers;
 using Kirby;
-using WaddleDee;
 using System.Collections.Generic;
 using System.Linq;
 using Il2Cpp;
@@ -75,14 +74,10 @@ public class MetaKnight : ModTower
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.Lead;
     }
 
-   /* public override bool IsValidCrosspath(int[] tiers)
+    public override bool IsValidCrosspath(int[] tiers)
     {
-        if (!Settings.Crosspath)
-        {
-            return false;
-        }
         return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-    } */
+    }
 
     public override string Get2DTexture(int[] tiers)
     {

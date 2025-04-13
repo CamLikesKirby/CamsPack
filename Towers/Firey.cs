@@ -175,7 +175,7 @@ public class Firey : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "Firey from BFDI pops some bloons! (Watch BFDI to understand this tower)";
+    public override string Description => "Firey from the hit web series pops some bloons! (Watch BFDI to understand this tower) (NGL I don't think this is that good of a tower and I don't know how to improve it)";
 
     public override bool Use2DModel => true;
     public override string Icon => "FireyIcon";
@@ -196,14 +196,10 @@ public class Firey : ModTower
         attackModel.weapons[0].projectile.collisionPasses = new[] { -1, 0 };
     }
 
-   /* public override bool IsValidCrosspath(int[] tiers)
+    public override bool IsValidCrosspath(int[] tiers)
     {
-        if (!Settings.Crosspath)
-        {
-            return false;
-        }
         return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-    } */
+    }
 
     public override string Get2DTexture(int[] tiers)
     {

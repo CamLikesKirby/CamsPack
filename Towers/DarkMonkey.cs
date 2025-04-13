@@ -1,3 +1,4 @@
+using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
@@ -5,6 +6,8 @@ using CamsPack;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
@@ -66,17 +69,10 @@ public class DarkMonkey : ModTower
         attackModel.weapons[0].projectile.pierce = 30;
         attackModel.weapons[0].projectile.GetDamageModel().damage = 4;
     }
-   /* public override bool IsValidCrosspath(int[] tiers)
+    public override bool IsValidCrosspath(int[] tiers)
     {
-        if (!Settings.Crosspath)
-        {
-            return false;
-        }
         return ModHelper.HasMod("UltimateCrosspathing") || base.IsValidCrosspath(tiers);
-    } */
-
-
-
+    }
 
     public class Sharp : ModUpgrade<DarkMonkey>
         {
@@ -259,19 +255,13 @@ public class TripleTripleShot : ModUpgrade<DarkMonkey>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Darts go brrrrrr";
+    public override string Description => "Darts go brrrrrr (why did I make this the desc back then)";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
-        var T1 = Game.instance.model.GetTowerFromId("DartMonkey-030").GetAttackModel().Duplicate();
-        T1.range = towerModel.range;
-        T1.name = "E_Weapon";
-        towerModel.AddBehavior(T1);
+        var attackModel = towerModel.GetAttackModel();
+        attackModel.weapons[0].emission = new ArcEmissionModel("ArcEmissionModel_", 6, 0, 20, null, false, false);
 
-        var T2 = Game.instance.model.GetTowerFromId("DartMonkey-030").GetAttackModel().Duplicate();
-        T2.range = towerModel.range;
-        T2.name = "F_Weapon";
-        towerModel.AddBehavior(T2);
     }
 
 }
