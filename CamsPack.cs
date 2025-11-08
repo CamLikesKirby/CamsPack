@@ -92,7 +92,7 @@ public class Settings : ModSettings
         requiresRestart = true,
         button = true,
     };
-    public static readonly ModSettingBool UnfinshedTowers = new(false)
+    public static readonly ModSettingBool UnfinshedTowers = new(true)
     {
         category = TowerType,
         displayName = "Unfinshed Towers",

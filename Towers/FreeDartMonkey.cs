@@ -81,7 +81,7 @@ public class FreeDartMonkey : ModTower
             towerModel.RemoveBehavior<TravelStraitModel>();
             weaponModel.projectile.AddBehavior(new TravelStraitModel("TravelStraitModel_Projectile", 1000, 1000));
             var projectile = attackModel.weapons[0].projectile;
-            projectile.AddBehavior(new TrackTargetModel("Testname", 9999999, true, false, 144, false, 300, false, true));
+            projectile.AddBehavior(new TrackTargetModel("Testname", 9999999, true, false, 144, false, 300, false, true, false));
         }
 
     }

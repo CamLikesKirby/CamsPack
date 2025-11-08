@@ -1,23 +1,26 @@
+using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
+using CamsPack;
+using Il2Cpp;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using Il2CppAssets.Scripts.Models.Towers.Filters;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
+using MaxLevelIdot;
 using MelonLoader;
 using System;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using MaxLevelIdot;
-using Il2Cpp;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
 using System.Collections.Generic;
 using System.Linq;
-using Il2CppAssets.Scripts.Models.Towers.Filters;
-using BTD_Mod_Helper;
-using CamsPack;
+using TGMonkey;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
@@ -98,20 +101,14 @@ public class Laser2Display : ModDisplay
         Set2DTexture(node, "Laser2Display");
     }
 }
-public class FSB : ModTower
+public class FSB : ModSubTower
 {
     public override string Portrait => "FireyBoxlcon";
     public override string Name => "Firey Speaker Box";
     public override string BaseTower => "DartMonkey-202";
     public override TowerSet TowerSet => TowerSet.Magic;
-    public override bool DontAddToShop => true;
     public override int Cost => 0;
     public override bool Use2DModel => true;
-    public override int TopPathUpgrades => 0;
-    public override int MiddlePathUpgrades => 0;
-    public override int BottomPathUpgrades => 0;
-
-
     public override string DisplayName => "Firey Speaker Box";
     public override string Description => "";
 
@@ -130,20 +127,14 @@ public class FSB : ModTower
     }
 }
 
-public class FSBG : ModTower
+public class FSBG : ModSubTower
 {
     public override string Portrait => "FireyBoxGlcon";
     public override string Name => " Giant Firey Speaker Box";
     public override string BaseTower => "DartMonkey-302";
 
     public override TowerSet TowerSet => TowerSet.Magic;
-
-    public override bool DontAddToShop => true;
     public override int Cost => 0;
-
-    public override int TopPathUpgrades => 0;
-    public override int MiddlePathUpgrades => 0;
-    public override int BottomPathUpgrades => 0;
     public override bool Use2DModel => true;
 
     public override string DisplayName => "Firey Speaker Box";
@@ -164,12 +155,9 @@ public class FSBG : ModTower
     }
 }
 
-
-
 public class Firey : ModTower
 {
     public override string BaseTower => TowerType.DartMonkey;
-
     public override TowerSet TowerSet => TowerSet.Magic;
     public override int Cost => 780;
     public override int TopPathUpgrades => 5;
@@ -261,7 +249,7 @@ public class HomingFlames : ModUpgrade<Firey>
         var projectile = attackModel.weapons[0].projectile;
         attackModel.weapons[0].projectile.pierce += 4;
         attackModel.weapons[0].projectile.GetDamageModel().damage += 2;
-        projectile.AddBehavior(new TrackTargetModel("Testname", 9999999, true, false, 144, false, 300, false, true));
+        projectile.AddBehavior(new TrackTargetModel("Testname", 9999999, true, false, 144, false, 300, false, true, false));
     }
 }
 
@@ -392,7 +380,7 @@ public class ForestFire : ModUpgrade<Firey>
             minonF.name = "Minon_Weapon";
             minonF.weapons[0].Rate = 35;
             minonF.weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
-            minonF.weapons[0].projectile.AddBehavior(new CreateTowerModel("FSBplace", GetTowerModel<FSB>().Duplicate(), 0f, true, false, false, true, true));
+            minonF.weapons[0].projectile.AddBehavior(new CreateTowerModel("FSBplace", ModContent.GetTowerModel<FSB>().Duplicate(), 0f, true, false, false, true, true));
             towerModel.AddBehavior(minonF);
         }
 
@@ -410,8 +398,7 @@ public class ForestFire : ModUpgrade<Firey>
 
                 AttackModel[] support = { Game.instance.model.GetTowerFromId("EngineerMonkey-200").GetAttackModels()[1].Duplicate()};
                 support[0].weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
-
-                support[0].weapons[0].projectile.AddBehavior(new CreateTowerModel("CreateTowerInAbility", GetTowerModel<FSBG>(), 0, true, false, false, true, false));
+                support[0].weapons[0].projectile.AddBehavior(new CreateTowerModel("CreateTowerInAbility", ModContent.GetTowerModel<FSBG>().Duplicate(), 0f, true, false, false, true, true));
                 support[0].weapons[0].projectile.display = new() { guidRef = "" };
 
                 Ability.GetBehavior<ActivateAttackModel>().attacks = support;
@@ -559,7 +546,7 @@ public class ForestFire : ModUpgrade<Firey>
                 AttackModel[] support = { Game.instance.model.GetTowerFromId("EngineerMonkey-200").GetAttackModels()[1].Duplicate() };
                 support[0].weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
 
-                support[0].weapons[0].projectile.AddBehavior(new CreateTowerModel("CreateTowerInAbility", GetTowerModel<FSBG>(), 0, true, false, false, true, false));
+                support[0].weapons[0].projectile.AddBehavior(new CreateTowerModel("CreateTowerInAbility", ModContent.GetTowerModel<FSBG>().Duplicate(), 0f, true, false, false, true, true));
                 support[0].weapons[0].projectile.display = new() { guidRef = "" };
 
                 Ability.GetBehavior<ActivateAttackModel>().attacks = support;

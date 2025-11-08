@@ -1,41 +1,38 @@
+using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
+using CamsPack;
+using Firey;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
+using Kirby;
 using MelonLoader;
 using System;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using CamsPack;
 using System.Collections.Generic;
 using System.Linq;
-using Kirby;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using TGMonkey.ForthPath;
-using BTD_Mod_Helper;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace TGMonkey;
 
-public class Eggs : ModTower
+public class Eggs : ModSubTower
 {
     public override string Portrait => "EggIcon";
     public override string Name => "Egg";
     public override TowerSet TowerSet => TowerSet.Support;
     public override string BaseTower => TowerType.DartMonkey;
-
-    public override bool DontAddToShop => true;
     public override int Cost => 0;
     public override bool Use2DModel => true;
-    public override int TopPathUpgrades => 0;
-    public override int MiddlePathUpgrades => 0;
-    public override int BottomPathUpgrades => 0;
-
 
     public override string DisplayName => "Egg";
     public override string Description => "idk just E G G";
@@ -49,7 +46,7 @@ public class Eggs : ModTower
         MoneyE1.weapons[0].projectile.GetBehavior<CashModel>().maximum = 70;
         MoneyE1.weapons[0].projectile.GetBehavior<CashModel>().minimum = 70;
         towerModel.AddBehavior(MoneyE1);
-        towerModel.AddBehavior(new CollectCashZoneModel("CollectCashZoneModel_", 45, 19, 3, "", true, true, true, true));
+        towerModel.AddBehavior(new CollectCashZoneModel("CollectCashZoneModel_", 45, 19, 3, "", true, true, true, true, false, 1));
         towerModel.isSubTower = true;
         towerModel.AddBehavior(new TowerExpireModel("ExpireModel", 20, 1, false, false));
     }
@@ -59,24 +56,16 @@ public class Eggs : ModTower
     }
 }
 
-public class Eggs2 : ModTower
+public class Eggs2 : ModSubTower
 {
     public override string Portrait => "EggIcon";
     public override string Name => "Egg 2";
     public override TowerSet TowerSet => TowerSet.Support;
     public override string BaseTower => TowerType.DartMonkey;
-
-    public override bool DontAddToShop => true;
     public override int Cost => 0;
     public override bool Use2DModel => true;
-    public override int TopPathUpgrades => 0;
-    public override int MiddlePathUpgrades => 0;
-    public override int BottomPathUpgrades => 0;
-
-
     public override string DisplayName => "Egg 2";
     public override string Description => "idk just E G G";
-
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
         towerModel.RemoveBehavior<AttackModel>();
@@ -85,7 +74,7 @@ public class Eggs2 : ModTower
         MoneyE2.weapons[0].projectile.GetBehavior<CashModel>().maximum = 90;
         MoneyE2.weapons[0].projectile.GetBehavior<CashModel>().minimum = 90;
         towerModel.AddBehavior(MoneyE2);
-        towerModel.AddBehavior(new CollectCashZoneModel("CollectCashZoneModel_", 45, 19, 3, "", true, true, true, true));
+        towerModel.AddBehavior(new CollectCashZoneModel("CollectCashZoneModel_", 45, 19, 3, "", true, true, true, true, false, 1));
         towerModel.isSubTower = true;
         towerModel.AddBehavior(new TowerExpireModel("ExpireModel", 35, 1, false, false));
     }
@@ -96,24 +85,16 @@ public class Eggs2 : ModTower
 }
 
 
-public class EggsT : ModTower
+public class EggsT : ModSubTower
 {
     public override string Portrait => "TurkeyIcon";
     public override string Name => "Turkey";
     public override TowerSet TowerSet => TowerSet.Support;
     public override string BaseTower => TowerType.DartMonkey;
-
-    public override bool DontAddToShop => true;
     public override int Cost => 0;
     public override bool Use2DModel => true;
-    public override int TopPathUpgrades => 0;
-    public override int MiddlePathUpgrades => 0;
-    public override int BottomPathUpgrades => 0;
-
-
     public override string DisplayName => "Turkey";
     public override string Description => "idk just E G G";
-
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
@@ -124,7 +105,7 @@ public class EggsT : ModTower
         EggsT2.name = "Eggs2_Weapon";
         EggsT2.weapons[0].Rate = 13;
         EggsT2.weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
-        EggsT2.weapons[0].projectile.AddBehavior(new CreateTowerModel("Eggs2place", GetTowerModel<Eggs2>().Duplicate(), 0f, true, false, false, true, true));
+        EggsT2.weapons[0].projectile.AddBehavior(new CreateTowerModel("Eggs2place", ModContent.GetTowerModel<Eggs2>().Duplicate(), 0f, true, false, false, true, true));
         towerModel.AddBehavior(EggsT2);
         towerModel.isSubTower = true;
         towerModel.AddBehavior(new TowerExpireModel("ExpireModel", 20, 1, false, false));
@@ -532,7 +513,7 @@ public class TurkeyEggs : ModUpgrade<ThanksgivingMonkey>
         Eggs.name = "Eggs_Weapon";
         Eggs.weapons[0].Rate = 15;
         Eggs.weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
-        Eggs.weapons[0].projectile.AddBehavior(new CreateTowerModel("Eggsplace", GetTowerModel<Eggs>().Duplicate(), 0f, true, false, false, true, true));
+        Eggs.weapons[0].projectile.AddBehavior(new CreateTowerModel("Eggsplace", ModContent.GetTowerModel<Eggs>().Duplicate(), 0f, true, false, false, true, true));
         towerModel.AddBehavior(Eggs);
     }
 }
@@ -559,7 +540,7 @@ public class TurkeyFarm : ModUpgrade<ThanksgivingMonkey>
         EggsT.name = "EggsT_Weapon";
         EggsT.weapons[0].Rate = 10;
         EggsT.weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
-        EggsT.weapons[0].projectile.AddBehavior(new CreateTowerModel("EggsTplace", GetTowerModel<EggsT>().Duplicate(), 0f, true, false, false, true, true));
+        EggsT.weapons[0].projectile.AddBehavior(new CreateTowerModel("EggsTplace", ModContent.GetTowerModel<EggsT>().Duplicate(), 0f, true, false, false, true, true));
         towerModel.AddBehavior(EggsT);
     }
 }
@@ -644,6 +625,12 @@ public class TGG : ModParagonUpgrade<ThanksgivingMonkey>
         towerModel.AddBehavior(Ability);
     }
 }
+
+
+
+
+
+
 
 
 
