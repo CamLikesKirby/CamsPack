@@ -103,7 +103,7 @@ public class EggsT : ModSubTower
         var EggsT2 = Game.instance.model.GetTowerFromId("EngineerMonkey-200").GetAttackModels()[1].Duplicate();
         EggsT2.range = towerModel.range;
         EggsT2.name = "Eggs2_Weapon";
-        EggsT2.weapons[0].Rate = 13;
+        EggsT2.weapons[0].Rate = 10;
         EggsT2.weapons[0].projectile.RemoveBehavior<CreateTowerModel>();
         EggsT2.weapons[0].projectile.AddBehavior(new CreateTowerModel("Eggs2place", ModContent.GetTowerModel<Eggs2>().Duplicate(), 0f, true, false, false, true, true));
         towerModel.AddBehavior(EggsT2);
@@ -197,7 +197,7 @@ public class ThanksgivingMonkey : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "It's Thanksgiving time!";
+    public override string Description => "It's Thanksgiving time! This monkey throws his turkies at the bloons, doing decent damage.";
   //  public override bool DontAddToShop => !Settings.UselessTowers == true;
     public override bool Use2DModel => true;
     public override bool DontAddToShop => !Settings.CT == true;
@@ -267,7 +267,7 @@ public class FatTurkey : ModUpgrade<ThanksgivingMonkey>
     public override int Path => TOP;
     public override int Tier => 1;
     public override int Cost => 965;
-    public override string Description => "The Fatter Turkey is bigger can pop more bloons and do more damage";
+    public override string Description => "The Fatter Turkey is bigger, gains two more damage, and pops more bloons.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -284,7 +284,7 @@ public class FatterTurkey : ModUpgrade<ThanksgivingMonkey>
     public override int Path => TOP;
     public override int Tier => 2;
     public override int Cost => 1295;
-    public override string Description => "The Turkey gets even bigger";
+    public override string Description => "The Turkey gets even bigger, doing more damage and gaining a huge amount of pierce.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -317,14 +317,14 @@ public class MediumWellTurkey : ModUpgrade<ThanksgivingMonkey>
     public override int Path => TOP;
     public override int Tier => 4;
     public override int Cost => 5995;
-    public override string Description => "A Perfect Turkey! (Gets 10+ Damage and pierce and the turkey gets bigger)";
+    public override string Description => "A Perfect Turkey! (Gets 10+ Damage and pierce, and the turkey gets slightly bigger.)";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
         attackModel.weapons[0].projectile.GetDamageModel().damage += 10;
-        attackModel.weapons[0].projectile.pierce += 11;
-        attackModel.weapons[0].projectile.scale += 0.5f;
+        attackModel.weapons[0].projectile.pierce += 10;
+        attackModel.weapons[0].projectile.scale += 0.1f;
         attackModel.weapons[0].projectile.ApplyDisplay<MWTDisplay>();
     }
 }
@@ -335,14 +335,14 @@ public class WellDoneTurkey : ModUpgrade<ThanksgivingMonkey>
     public override int Path => TOP;
     public override int Tier => 5;
     public override int Cost => 50000;
-    public override string Description => "Too Well done..";
+    public override string Description => "Yum! This turkey is perfect! Wait why is the turkey so big and spicey.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
         var attackModel = towerModel.GetAttackModel();
         attackModel.weapons[0].projectile.ApplyDisplay<WDTDisplay>();
         attackModel.weapons[0].projectile.GetDamageModel().damage += 50;
-        attackModel.weapons[0].projectile.pierce += 1000;
+        attackModel.weapons[0].projectile.pierce += 20;
         var Fire5 = Game.instance.model.GetTower(TowerType.MortarMonkey, 0, 0, 2).GetAttackModel().weapons[0].projectile.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile.GetBehavior<AddBehaviorToBloonModel>();
         attackModel.weapons[0].projectile.AddBehavior(Fire5);
         attackModel.weapons[0].projectile.collisionPasses = new[] { -1, 0 };
@@ -355,7 +355,7 @@ public class FasterLegs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => MIDDLE;
     public override int Tier => 1;
     public override int Cost => 560;
-    public override string Description => "Gets more speed";
+    public override string Description => "Attack speed increases by 8%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -369,8 +369,8 @@ public class EvenFasterLegs : ModUpgrade<ThanksgivingMonkey>
     public override string Portrait => "LuigiIcon";
     public override int Path => MIDDLE;
     public override int Tier => 2;
-    public override int Cost => 1000;
-    public override string Description => "Gets more speed";
+    public override int Cost => 540;
+    public override string Description => "Attack speed increases by 6%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -385,7 +385,7 @@ public class TurkeyLegs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => MIDDLE;
     public override int Tier => 3;
     public override int Cost => 6550;
-    public override string Description => "(Set it to normal so it works) Shoots Turkey Legs Fast and aims where you point on the screen but the main attack gets weaker";
+    public override string Description => "(Set it to normal so it works) Shoots Turkey Legs Fast and aims where you point on the screen, but the main attack gets slower by 6%, decreases pirece, and makes the turkey smaller.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -410,7 +410,7 @@ public class BurntTurkeyLegs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => MIDDLE;
     public override int Tier => 4;
     public override int Cost => 59000;
-    public override string Description => "(Set it to normal so it works) The turkey legs Burn the bloons and do more damage";
+    public override string Description => "(Set it to normal so it works) The turkey legs Burn the bloons and do seven more damage. Ablitiy: Burns all the bloons in a massive fire.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -443,7 +443,7 @@ public class GourmetTurkeyLegs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => MIDDLE;
     public override int Tier => 5;
     public override int Cost => 65000;
-    public override string Description => "(Set it to normal so it works) Shoots slower but packs a punch and pierce gets better";
+    public override string Description => "(Set it to normal so it works) Shoots slower but two more appear and damage and pierce get a massive increase.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -504,7 +504,7 @@ public class TurkeyEggs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => BOTTOM;
     public override int Tier => 3;
     public override int Cost => 1365;
-    public override string Description => "The Turkey lays eggs that people buy";
+    public override string Description => "The Turkey lays eggs that people buy for $70.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -524,7 +524,7 @@ public class TurkeyFarm : ModUpgrade<ThanksgivingMonkey>
     public override int Path => BOTTOM;
     public override int Tier => 4;
     public override int Cost => 4565;
-    public override string Description => "Places Turkeys to lay eggs and attack bloons";
+    public override string Description => "Places Turkeys to lay eggs and attack bloons. The turkeys attack slow but do 10 damage..";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -550,8 +550,8 @@ public class TurkeyFactory : ModUpgrade<ThanksgivingMonkey>
     public override string Portrait => "LuigiIcon";
     public override int Path => BOTTOM;
     public override int Tier => 5;
-    public override int Cost => 70000;
-    public override string Description => "The mass production..";
+    public override int Cost => 130000;
+    public override string Description => "HOW ARE THEY LAYING EGGS SO FAST!! AND THEY KEEP HATCHING!!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -559,7 +559,7 @@ public class TurkeyFactory : ModUpgrade<ThanksgivingMonkey>
         {
             if (attacks.name.Contains("EggsT_Weapon"))
             {
-                attacks.weapons[0].Rate = 5;
+                attacks.weapons[0].Rate = 3;
             }
         }
     }
@@ -567,7 +567,7 @@ public class TurkeyFactory : ModUpgrade<ThanksgivingMonkey>
 
 public class TGG : ModParagonUpgrade<ThanksgivingMonkey>
 {
-    public override int Cost => 750000;
+    public override int Cost => 800000;
     public override string Description => "The best thanksgiving for the monkeys...";
     public override string DisplayName => "THE THANKSGIVING MASTER";
 

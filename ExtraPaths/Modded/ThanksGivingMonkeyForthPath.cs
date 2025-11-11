@@ -89,7 +89,7 @@ public class Leaves : UpgradePlusPlus<TGForthPath>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Shoots out high pierce leaves";
+    public override string Description => "Shoots out high pierce leaves.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -111,7 +111,7 @@ public class WindyLeaves : UpgradePlusPlus<TGForthPath>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The leaves knockback the bloons";
+    public override string Description => "The leaves have a 50% chance knockback the bloons";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -169,7 +169,7 @@ public class ManyLeaves : UpgradePlusPlus<TGForthPath>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Leaves shoot super fast and gets more pierce";
+    public override string Description => "Leaves shoot supersonicly and gets more pierce";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -196,7 +196,7 @@ public class LeafMaster : UpgradePlusPlus<TGForthPath>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Master of leaves";
+    public override string Description => "Goes crazy fast and gets lots of pierce, why? Because purple!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -223,7 +223,7 @@ public class LeafTypes : UpgradePlusPlus<TGForthPath>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Master of leaves TYPES!";
+    public override string Description => "Gets a explosive leave, a magic leave, tack leaves, and windy leaves.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

@@ -38,7 +38,7 @@ public class BananaGun : UpgradePlusPlus<BananaGunPath>
     public override string Icon => "BananaGunlol";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "Now attacks bloons with its bananas!";
+    public override string Description => "Now attacks bloons with its bananas! (Can't be buffed for some reason)";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {
@@ -121,7 +121,7 @@ public class BananaGun : UpgradePlusPlus<BananaGunPath>
                     {
                         if (attacks.name.Contains("BGun_Weapon"))
                         {
-                            attacks.weapons[0].projectile.GetDamageModel().damage += 6;
+                            attacks.weapons[0].projectile.GetDamageModel().damage *= 2;
                             attacks.weapons[0].projectile.ApplyDisplay<Banan3>();
                         }
                     }
@@ -145,7 +145,7 @@ public class BananaGun : UpgradePlusPlus<BananaGunPath>
                         if (attacks.name.Contains("BGun_Weapon"))
                         {
                             attacks.weapons[0].projectile.GetDamageModel().damage += 1;
-                            attacks.weapons[0].rate *= .4f;
+                            attacks.weapons[0].rate *= .2f;
                         }
                     }
                 }

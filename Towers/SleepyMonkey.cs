@@ -27,7 +27,7 @@ public class SleepingMonkey : ModTower
     public override int TopPathUpgrades => 0;
     public override int MiddlePathUpgrades => 0;
     public override int BottomPathUpgrades => 0;
-    public override string Description => "(THIS IS A JOKE VERSION OF A TOWER) It's just a Monkey Sleeping!";
+    public override string Description => "(THIS IS A JOKE TOWER) It's just a Monkey Sleeping! WAKE UP WAKE UP!!";
     public override bool DontAddToShop => !Settings.UselessTowers == true || !Settings.JT == true;
     public override bool Use2DModel => true;
     public override string Icon => "SMIcon";

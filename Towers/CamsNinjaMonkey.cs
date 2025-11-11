@@ -88,7 +88,7 @@ public class CamsNinjaMonkey : ModTower
 
                 // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-                public override string Description => "Shurikens now pop Frozen and Lead Bloons and do more damage to all.";
+                public override string Description => "Shurikens now pop Frozen and Lead Bloons and do more damage.";
 
                 public override void ApplyUpgrade(TowerModel towerModel)
                 {
@@ -107,7 +107,7 @@ public class CamsNinjaMonkey : ModTower
 
                 // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-                public override string Description => "Throws out secondary bombs every shot.";
+                public override string Description => "Throws out cluster bombs.";
 
                 public override void ApplyUpgrade(TowerModel towerModel)
                 {
@@ -128,7 +128,7 @@ public class CamsNinjaMonkey : ModTower
 
                 // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-                public override string Description => "Faster firing shurikens does huge damage.";
+                public override string Description => "Faster firing shurikens that do huge damage.";
 
                 public override void ApplyUpgrade(TowerModel towerModel)
                 {
@@ -148,7 +148,7 @@ public class CamsNinjaMonkey : ModTower
 
                     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-                    public override string Description => "Moab Assured Destroyer. Slower firing mega missiles deal extreme damage to MOAB class Bloons.";
+                    public override string Description => "Moab Assured Destroyer. Slower firing mega missiles deal extreme damage to MOAB class Bloons. (Set it to normal to make it work.)";
 
                     public override void ApplyUpgrade(TowerModel towerModel)
                     {

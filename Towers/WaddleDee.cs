@@ -113,8 +113,7 @@ public class SharpWahing : ModUpgrade<WaddleDee>
     public override int Path => TOP;
     public override int Tier => 1;
     public override int Cost => 300;
-
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Sharp Wanyaing";
 
     public override string Description => "Waddle Dee Gets More Pierce";
 
@@ -134,7 +133,7 @@ public class SharperWahing : ModUpgrade<WaddleDee>
     public override int Tier => 2;
     public override int Cost => 600;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Sharper Wanyaing";
 
     public override string Description => "Waddle Dee Gets Even More Pierce";
 
@@ -153,8 +152,7 @@ public class TheSpear : ModUpgrade<WaddleDee>
     public override int Path => TOP;
     public override int Tier => 3;
     public override int Cost => 850;
-
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Spear";
 
     public override string Description => "Waddle Dee Gets A Close Spear Attack";
 
@@ -183,9 +181,9 @@ public class TheBandana : ModUpgrade<WaddleDee>
     public override int Tier => 4;
     public override int Cost => 3850;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Blue Bandana";
 
-    public override string Description => "Waddle Dee Gets Blue Bandana to get more pierce and damage";
+    public override string Description => "Waddle Dee Gets Blue Bandana and has more pierce and does more damage.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -217,7 +215,7 @@ public class BandanaWaddleDee : ModUpgrade<WaddleDee>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Waddle Dee Turns into Bandana Waddle dee!";
+    public override string Description => "So that's how Badnana Waddle Dee trained.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -250,7 +248,7 @@ public class StrongerWahing : ModUpgrade<WaddleDee>
     public override int Tier => 1;
     public override int Cost => 210;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Stronger Wanyaing";
 
     public override string Description => "Waddle Dee Does More Damage";
 
@@ -270,7 +268,7 @@ public class PiercingWah : ModUpgrade<WaddleDee>
     public override int Tier => 2;
     public override int Cost => 380;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Piercing Wanya";
 
     public override string Description => "Waddle Dee Gets More Pierce and Can Hit Camo!";
 
@@ -292,9 +290,9 @@ public class WahingMoney : ModUpgrade<WaddleDee>
     public override int Tier => 3;
     public override int Cost => 5860;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Wanyaing Money";
 
-    public override string Description => "Waddle Dee Gets Money and attack speed is increased!";
+    public override string Description => "Waddle Dee Gets Money and attack speed is increased by 4%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -316,9 +314,9 @@ public class DoubleWah : ModUpgrade<WaddleDee>
     public override int Tier => 4;
     public override int Cost => 7950;
 
-    // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
+    public override string DisplayName => "Double Wanya";
 
-    public override string Description => "Waddle Dee Gets Two Umbrellas!";
+    public override string Description => "Waddle Dee Gets Two Umbrellas! Attack faster by 4% and getting more pierce and damage.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -355,7 +353,7 @@ public class GoldenDee : ModUpgrade<WaddleDee>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Golden Waddle Dee....";
+    public override string Description => "Waddle Dee got his money up, not his funny up.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

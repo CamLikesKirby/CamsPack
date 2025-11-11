@@ -188,7 +188,7 @@ public class FastPunching : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Attacks Faster";
+    public override string Description => "Kirby Attacks Faster by 7%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -208,7 +208,7 @@ public class FasterPunching : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Attacks Even Faster";
+    public override string Description => "Kirby Attacks Even Faster by 6.5%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -227,7 +227,7 @@ public class StrongPunching : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Now Kirby Punching is Stronger by +2";
+    public override string Description => "Now Kirby Punching is Stronger. Increasing damage by 2.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -248,7 +248,7 @@ public class FightingSenior : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby's Damage, Attacking Speed, and Pierce Gets Better";
+    public override string Description => "Kirby's damage increases by 2, Attacking speed gains by 7%, and gets 4 pierce.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -270,7 +270,7 @@ public class FightingMaster : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Master of Fighters";
+    public override string Description => "By training his skills, Kirby damage and pierce increases dramatically.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -338,7 +338,7 @@ public class SingForMoney : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Now Can Get Money (And also gets more range, damage and pierce)";
+    public override string Description => "Kirby singing skills are so good that the monkeys pay him $200 each round. His damage, range, and pierce also slightly increase.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -366,7 +366,7 @@ public class SingingClub : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Now Shoots His Music In All Directions, Can Buff Tower's Speed, and With his ability, attack faster!";
+    public override string Description => "Kirby sings louder and better: his singing now firing around him as an attack. The monkeys also get a speed boost from his singing. Ablitiy: Literally copies the Turbo Charges ablitiy by singing supersonicly.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -405,7 +405,7 @@ public class SCREAM : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "MAYBE IF KIRBY SCREAMS IT WILL DO SOMETHING!!!!!!!!!!!!!!!!!!!!";
+    public override string Description => "KIRBY SINGING IS SUPER LOUD AND GIVES EVERYONE MORE ADRENALINE!!! IT LOOKS LIKE THE BLOONS CAN'T BARE IT!!!!!!!!!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -444,7 +444,7 @@ public class FireAbility : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Fire Ability and burns bloons to the ground";
+    public override string Description => "Kirby Gets The Fire Ability and burns bloons to the ground and giving him little range and pierce.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -500,7 +500,7 @@ public class TornadoAbility : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets The Tornado Ability";
+    public override string Description => "Kirby Gets The Tornado Ability that pushes back the bloons. Also gives a little range and pierce.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -553,7 +553,7 @@ public class TheUltraSword : ModUpgrade<Kirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Kirby Gets the Ultra Sword that can slay through land like butter";
+    public override string Description => "Kirby Gets the Ultra Sword that can slay through land like butter. Also gives him tons of powerful boosts!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -581,7 +581,7 @@ public class TheUltraSword : ModUpgrade<Kirby>
 public class StarRod : ModParagonUpgrade<Kirby>
 {
     public override int Cost => 450000;
-    public override string Description => "Gives peaceful dreams to the people of dreamland but does it have enough power to deal with the bloons?";
+    public override string Description => "Gives peaceful dreams to the people of dreamland, but does it have enough power to deal with the bloons?";
     public override string DisplayName => "The Star Rod";
 
     public override void ApplyUpgrade(TowerModel towerModel)

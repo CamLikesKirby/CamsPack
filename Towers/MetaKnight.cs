@@ -54,7 +54,7 @@ public class MetaKnight : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "The Star Warrior...";
+    public override string Description => "The Star Warrior has come from his ship to pop the bloons. Has a fast close-ranged dense sword attack that deals 3 damage.";
 
     public override bool Use2DModel => true;
     public override bool DontAddToShop => !Settings.KT == true;
@@ -124,7 +124,7 @@ public class FastSlashing : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Gets More Speed";
+    public override string Description => "Meta Knight Swings 6% faster";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -144,7 +144,7 @@ public class StrongerSlashing : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Does More Damage and Speed";
+    public override string Description => "Meta Knight Swings faster by 8% and does more damage.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -165,7 +165,7 @@ public class WingBashing : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Uses His Cold Wings To Attack";
+    public override string Description => "Meta Knight Uses the cold wind to freeze the bloons.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -192,7 +192,7 @@ public class SharpenedSword : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Does More Damage And Attacks Even Faster And Gets More Range!";
+    public override string Description => "Meta Knight Swings faster by 7%, does 2 more damage, and gets more range.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -259,7 +259,7 @@ public class EvenLongerSword : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Gets Even More Range and a little pierce";
+    public override string Description => "Meta Knight Gets Even More Range and a lots of pierce";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -281,7 +281,7 @@ public class SyrupSword : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Can Now Slow Bloons With His Sitcky Sword and Can Do Gets Little More Range";
+    public override string Description => "Meta Knight Can Now Slow Bloons With His Sitcky Sword, swings faster by 8%, and Gets Little More Range";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -307,7 +307,7 @@ public class SitckyBloonuation : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Attack Gets More Speed and Can Knock Back Bloons!";
+    public override string Description => "Swings get faster by 6% and Can Knock Back Bloons!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -373,7 +373,7 @@ public class SharperBlade : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Gets More Pierce";
+    public override string Description => "Meta Knight Gets 5 more Pierce";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -393,7 +393,7 @@ public class SuperSharpedBlade : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Gets More ALOT of Pierce";
+    public override string Description => "Meta Knight Gets ALOT of Pierce";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -413,7 +413,7 @@ public class DarkMagic : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Gets The Power of Dark Magic";
+    public override string Description => "Meta Knight Gets The Power of Dark Magic. Getting a magic projectile and more range, damage, and huge amount a pierce.";
 
      public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -439,7 +439,7 @@ public class DarkSword : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Power of Dark Magic Goes into Meta Knight's Sword";
+    public override string Description => "The Power of Dark Magic Goes into Meta Knight's Sword. Making him swing faster, get a massive amount of pierce, range, and damage.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -464,7 +464,7 @@ public class OverTakingDarkness : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "The Power of Dark Magic.... It's Taking Over Him....";
+    public override string Description => "The Power of Dark Magic is too much! It's Taking Over Him!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -488,7 +488,7 @@ public class OverTakingDarkness : ModUpgrade<MetaKnight>
 public class KnightMerge : ModParagonUpgrade<MetaKnight>
 {
     public override int Cost => 750000;
-    public override string Description => "How About We Merge All the Knights!";
+    public override string Description => "Lets just combind all the knights to combind their power!";
     public override string DisplayName => "The Merged Knight";
 
     public override void ApplyUpgrade(TowerModel towerModel)

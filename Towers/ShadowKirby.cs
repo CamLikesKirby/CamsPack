@@ -43,7 +43,7 @@ public class ShadowKirby : ModTower
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 0;
     public override bool DontAddToShop => !Settings.OpTowers == true || !Settings.KT == true;
-    public override string Description => "(This is the OP version of Shadow Kirby the balanced version will be in the next update) Shadow Kirby got some power and is now trying destory all bloons";
+    public override string Description => "(This tower is unbalanced) Shadow Kirby got a huge amount of power and is now trying destory all bloon-kind.";
 
     public override bool Use2DModel => true;
     public override string Icon => "SKIcon";
@@ -87,7 +87,7 @@ public class ShadowRay : ModUpgrade<ShadowKirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Gives Shadow Kirby a Ray attack";
+    public override string Description => "Gives Shadow Kirby a Ray attack.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -111,7 +111,7 @@ public class ShadowMoney : ModUpgrade<ShadowKirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Shadow Kirby makes money";
+    public override string Description => "Shadow Kirby makes lots of money.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -134,7 +134,7 @@ public class ShadowSpread : ModUpgrade<ShadowKirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Gives Shadow Kirby More Projectiles";
+    public override string Description => "Gives Shadow Kirby More Projectiles.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -167,7 +167,7 @@ public class ShadowCopy : ModUpgrade<ShadowKirby>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Attacks faster and buffs the other towers";
+    public override string Description => "Attacks faster and increases other tower's firing rate.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

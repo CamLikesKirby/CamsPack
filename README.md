@@ -25,6 +25,8 @@ Credit: Nintendo (The Kirby characters), jacknjellify (Firey), u/PawaMV (The Dar
 
 I made everything else
 
+(Has Ulitimate Crosspathing Support)
+
 QNA:
 
 Q: did you make this for/work for [insert youtuber]

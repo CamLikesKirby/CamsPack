@@ -169,7 +169,7 @@ public class MaxLevelIdot : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "Look It's the youtuber MAXLEVELIDOT! He Uses His Hat to Pop the Bloons! (2 Damage)";
+    public override string Description => "(Semi-Joke Tower) Look It's the youtuber MAXLEVELIDOT! He Uses His Hat to Pop the Bloons! (2 Damage)";
 
     public override bool Use2DModel => true;
     public override string Icon => "MILIcon";
@@ -200,7 +200,7 @@ public class LongerHat : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 1;
     public override int Cost => 195;
-    public override string Description => "Max's Hat Can Pop More Bloons";
+    public override string Description => "Max's hat can pop 5 more bloons.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -215,7 +215,7 @@ public class SpikeyHat : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 2;
     public override int Cost => 620;
-    public override string Description => "Max's Hat Does Two More Damage";
+    public override string Description => "Max's Hat Does 2 More Damage";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -231,7 +231,7 @@ public class ButterflyClicks : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 3;
     public override int Cost => 1850;
-    public override string Description => "Max's Butterfly Clicks Causes Him to Attack Faster";
+    public override string Description => "Max's Butterfly Clicks Causes Him to Attack 3% Faster";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -246,7 +246,7 @@ public class Mafia : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 4;
     public override int Cost => 6850;
-    public override string Description => "Max Gets Help From the Mafia to Pop the Bloons and Earn Some Cash";
+    public override string Description => "Max Gets Help From the Mafia to blow up and stun the bloons. They also make 370 Cash per round.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -265,7 +265,7 @@ public class Level1000Boss : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 5;
     public override int Cost => 45000;
-    public override string Description => "Max Levels Up to the 1000 Level Boss of the Mafia";
+    public override string Description => "Max Levels Up to the 1000 Level Boss of the Mafia. Making him more powerful and rich.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -289,7 +289,7 @@ public class StrongArm : ModUpgrade<MaxLevelIdot>
     public override int Path => MIDDLE;
     public override int Tier => 1;
     public override int Cost => 350;
-    public override string Description => "Max Attacks Faster";
+    public override string Description => "Max Attacks Faster by 1%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -304,7 +304,7 @@ public class StrongerArm : ModUpgrade<MaxLevelIdot>
     public override int Path => MIDDLE;
     public override int Tier => 2;
     public override int Cost => 850;
-    public override string Description => "Max Attacks Faster";
+    public override string Description => "Max Attacks Faster by 2%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -339,7 +339,7 @@ public class RocketPower : ModUpgrade<MaxLevelIdot>
     public override int Path => MIDDLE;
     public override int Tier => 4;
     public override int Cost => 17500;
-    public override string Description => "Max Gets the Power of the Hydra Rocket Pods";
+    public override string Description => "Max Gets the Power of the Hydra Rocket Pods. Getting their buffs and ability.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -364,7 +364,7 @@ public class StickyArmy : ModUpgrade<MaxLevelIdot>
     public override int Path => MIDDLE;
     public override int Tier => 5;
     public override int Cost => 60000;
-    public override string Description => "Max Summons Sticky Bombs to Destroy Moab Class Bloons";
+    public override string Description => "Max Summons Sticky Bombs to Destroy Moab Class Bloons.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -429,7 +429,7 @@ public class Jeremiah : ModUpgrade<MaxLevelIdot>
     public override int Path => BOTTOM;
     public override int Tier => 3;
     public override int Cost => 15000;
-    public override string Description => "Jeremiah gives Max Gets Early Access to BTD7 and some weapons";
+    public override string Description => "Jeremiah gives Max Gets Early Access to BTD7, a sniper, and Churchills left over rockets.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -452,7 +452,7 @@ public class Hank : ModUpgrade<MaxLevelIdot>
     public override int Path => BOTTOM;
     public override int Tier => 4;
     public override int Cost => 17000;
-    public override string Description => "Max Works With Hank to Make the Bloons Weaker";
+    public override string Description => "Max Works With Hank to Make the Bloons Weaker with ice.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -475,7 +475,7 @@ public class MrMaxIdot : ModUpgrade<MaxLevelIdot>
     public override int Path => BOTTOM;
     public override int Tier => 5;
     public override int Cost => 350000;
-    public override string Description => "The President Of Monkey City";
+    public override string Description => "Becomes President Of Monkey City, Getting access to a giant laser.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

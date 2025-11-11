@@ -147,7 +147,7 @@ public class Sabres : UpgradePlusPlus<SabrePath>
     public override string Icon => "SIcon";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "Places Sabres for more sweet money";
+    public override string Description => "Places Sabres for more sweet money and gets another $506 per round.";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {
@@ -197,7 +197,7 @@ public class MadSabres : UpgradePlusPlus<SabrePath>
     public override string Icon => "memad";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "Sabers now attack and give more money";
+    public override string Description => "Sabers now attack with new robo gear and give more money";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {
@@ -228,7 +228,7 @@ public class Player3 : UpgradePlusPlus<SabrePath>
     public override string Icon => "Player3deep";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "Player 3's Secret";
+    public override string Description => "WAIT! DON'T LET SABRE OR PLAYER 3 NEAR EACHOTHER OR YOU WILL-";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {
