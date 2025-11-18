@@ -125,6 +125,10 @@ public class FSB : ModSubTower
     {
         return "FireyBoxDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
+    }
 }
 
 public class FSBG : ModSubTower
@@ -163,7 +167,7 @@ public class Firey : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "Firey from the hit web series pops bloons with his fire ablities! (Watch BFDI to understand this tower) (Looking at this now this is just a boring fire tower.)";
+    public override string Description => "Firey from the hit web series pops bloons with his fire ablities! (Looking at this now this is just a boring fire tower.)";
 
     public override bool Use2DModel => true;
     public override string Icon => "FireyIcon";
@@ -209,7 +213,7 @@ public class BetterFire : ModUpgrade<Firey>
     public override int Path => TOP;
     public override int Tier => 1;
     public override int Cost => 215;
-    public override string Description => "His Fire gets +3 pierce and attacks faster";
+    public override string Description => "His Fire gets +3 pierce and attacks faster by 2%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -240,8 +244,8 @@ public class HomingFlames : ModUpgrade<Firey>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 3;
-    public override int Cost => 2760;
-    public override string Description => "His Fire now seek and gets +4 pierce and +2 Damage";
+    public override int Cost => 2700;
+    public override string Description => "His Fire now seeks the bloons and also get +4 pierce and +2 Damage";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -319,7 +323,7 @@ public class ForestFire : ModUpgrade<Firey>
         public override int Path => MIDDLE;
         public override int Tier => 2;
         public override int Cost => 2763;
-        public override string Description => "The Slaps Knockbacks the bloons and gets more range, +1 Pierce";
+        public override string Description => "The Slaps Knockbacks the bloons and gets more range, also gets +1 Pierce";
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
@@ -369,7 +373,7 @@ public class ForestFire : ModUpgrade<Firey>
         public override int Path => MIDDLE;
         public override int Tier => 4;
         public override int Cost => 10500;
-        public override string Description => "Firey gets his Speaker Box to attack the bloons with a slow high damage laser attack.";
+        public override string Description => "Firey gets his Speaker Box to attack the bloons! They attack with a slow high damage laser.";
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
@@ -388,7 +392,7 @@ public class ForestFire : ModUpgrade<Firey>
             public override int Path => MIDDLE;
             public override int Tier => 5;
             public override int Cost => 45000;
-            public override string Description => " Ability: Places a Mega Speaker Box with a high fire rate and damage. Firey Spawns his Speaker Box faster.";
+            public override string Description => " Ability: Places a Mega Speaker Box with a high fire rate and damage. Firey Spawns his Smaller Speaker Box faster.";
 
             public override void ApplyUpgrade(TowerModel towerModel)
             {
@@ -424,7 +428,7 @@ public class ForestFire : ModUpgrade<Firey>
             public override string Portrait => "LuigiIcon";
             public override int Path => BOTTOM;
             public override int Tier => 1;
-            public override int Cost => 320;
+            public override int Cost => 420;
             public override string Description => "Gets +20 range";
 
             public override void ApplyUpgrade(TowerModel towerModel)
@@ -440,7 +444,7 @@ public class ForestFire : ModUpgrade<Firey>
             public override string Portrait => "LuigiIcon";
             public override int Path => BOTTOM;
             public override int Tier => 2;
-            public override int Cost => 640;
+            public override int Cost => 880;
             public override string Description => "Gets +20 range again and can see camo";
 
             public override void ApplyUpgrade(TowerModel towerModel)
@@ -561,9 +565,3 @@ public class ForestFire : ModUpgrade<Firey>
         }
     }
 }
-
-
-
-
-
-

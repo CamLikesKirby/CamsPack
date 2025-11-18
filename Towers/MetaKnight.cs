@@ -54,7 +54,7 @@ public class MetaKnight : ModTower
     public override int TopPathUpgrades => 5;
     public override int MiddlePathUpgrades => 5;
     public override int BottomPathUpgrades => 5;
-    public override string Description => "The Star Warrior has come from his ship to pop the bloons. Has a fast close-ranged dense sword attack that deals 3 damage.";
+    public override string Description => "The Star Warrior has come from his ship to help the monkeys pop the bloons. Has a fast close-ranged dense sword attack that deals 3 damage.";
 
     public override bool Use2DModel => true;
     public override bool DontAddToShop => !Settings.KT == true;
@@ -111,6 +111,10 @@ public class MetaKnight : ModTower
         }
         return "MetaKDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
+    }
 }
 
 public class FastSlashing : ModUpgrade<MetaKnight>
@@ -165,7 +169,7 @@ public class WingBashing : ModUpgrade<MetaKnight>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "Meta Knight Uses the cold wind to freeze the bloons.";
+    public override string Description => "Meta Knight Uses the cold wind to freeze the bloons with his wings.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

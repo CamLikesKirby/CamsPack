@@ -42,6 +42,10 @@ public class SleepingMonkey : ModTower
     {
         return "SMDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.BeastHandler).towerIndex + 1;
+    }
 }
 
 

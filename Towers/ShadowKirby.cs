@@ -74,6 +74,10 @@ public class ShadowKirby : ModTower
         // }
         return "SKDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
+    }
 }
 
 public class ShadowRay : ModUpgrade<ShadowKirby>

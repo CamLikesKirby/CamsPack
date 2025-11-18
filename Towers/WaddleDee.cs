@@ -69,7 +69,7 @@ public class WaddleDee : ModTower
     }
     public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
     {
-        return towerSet.First(model => model.towerId == TowerType.Mermonkey).towerIndex + 1;
+        return towerSet.First(model => model.towerId == TowerType.BeastHandler).towerIndex + 1;
     }
 
     /*public override bool IsValidCrosspath(int[] tiers)
@@ -215,7 +215,7 @@ public class BandanaWaddleDee : ModUpgrade<WaddleDee>
 
     // public override string DisplayName => "Don't need to override this, the default turns it into 'Pair'"
 
-    public override string Description => "So that's how Badnana Waddle Dee trained.";
+    public override string Description => "So that's how Badnana Waddle Dee trained!";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -292,7 +292,7 @@ public class WahingMoney : ModUpgrade<WaddleDee>
 
     public override string DisplayName => "Wanyaing Money";
 
-    public override string Description => "Waddle Dee Gets Money and attack speed is increased by 4%";
+    public override string Description => "Waddle Dee Earns Money and attacks faster by 4%";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -316,7 +316,7 @@ public class DoubleWah : ModUpgrade<WaddleDee>
 
     public override string DisplayName => "Double Wanya";
 
-    public override string Description => "Waddle Dee Gets Two Umbrellas! Attack faster by 4% and getting more pierce and damage.";
+    public override string Description => "Waddle Dee Gets Two Umbrellas! Attacks faster by 4% and gets more pierce and damage.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -392,7 +392,5 @@ public class GoldenDee : ModUpgrade<WaddleDee>
         towerModel.range += 50;
         attackModel.weapons[0].projectile.GetDamageModel().damage += 48;
         towerModel.GetWeapon().projectile.AddBehavior(new DamageModifierForTagModel("DamageModifierForTagModel", "Moabs", 1, 390, false, true));
-
-
     }
 }

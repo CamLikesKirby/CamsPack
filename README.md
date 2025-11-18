@@ -10,7 +10,7 @@ Nintendo (The Kirby characters), [jacknjellify](https://www.youtube.com/@BFDI) (
 
 I made everything else
 
-(NOTICE: This mod may be split into differnt mods again, and the github will be archived soon, so watch out for that!)
+(NOTICE: This mod will be split into differnt mods again, and the github will be archived soon, so watch out for that!)
 This mod is pretty old so don't expect it to be good or balanced.
 
 Everything I made in a pack!

@@ -189,9 +189,7 @@ public class TLBGDisplay : ModDisplay
 
 public class ThanksgivingMonkey : ModTower
 {
-    
     public override string BaseTower => TowerType.DartMonkey;
-
     public override TowerSet TowerSet => TowerSet.Support;
     public override int Cost => 2335;
     public override int TopPathUpgrades => 5;
@@ -259,6 +257,10 @@ public class ThanksgivingMonkey : ModTower
             return "TGT2Display";
         }
         return "TGDisplay";
+    }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.BeastHandler).towerIndex + 1;
     }
 }
 public class FatTurkey : ModUpgrade<ThanksgivingMonkey>
@@ -335,7 +337,7 @@ public class WellDoneTurkey : ModUpgrade<ThanksgivingMonkey>
     public override int Path => TOP;
     public override int Tier => 5;
     public override int Cost => 50000;
-    public override string Description => "Yum! This turkey is perfect! Wait why is the turkey so big and spicey.";
+    public override string Description => "Never let the alchmist cook for the thanksgiving table bro.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -443,7 +445,7 @@ public class GourmetTurkeyLegs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => MIDDLE;
     public override int Tier => 5;
     public override int Cost => 65000;
-    public override string Description => "(Set it to normal so it works) Shoots slower but two more appear and damage and pierce get a massive increase.";
+    public override string Description => "(Set it to normal so it works) Shoots slower, but two more appear. Damage and pierce also get a massive increase.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -504,7 +506,7 @@ public class TurkeyEggs : ModUpgrade<ThanksgivingMonkey>
     public override int Path => BOTTOM;
     public override int Tier => 3;
     public override int Cost => 1365;
-    public override string Description => "The Turkey lays eggs that people buy for $70.";
+    public override string Description => "The Turkey lays eggs that people buy for $70";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
@@ -524,7 +526,7 @@ public class TurkeyFarm : ModUpgrade<ThanksgivingMonkey>
     public override int Path => BOTTOM;
     public override int Tier => 4;
     public override int Cost => 4565;
-    public override string Description => "Places Turkeys to lay eggs and attack bloons. The turkeys attack slow but do 10 damage..";
+    public override string Description => "Places Turkeys to lay eggs and attack bloons. The turkeys attack slow but do 10 damage";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {

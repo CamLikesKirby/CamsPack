@@ -36,9 +36,6 @@ public class SandMonkey : ModTower
     public override int BottomPathUpgrades => 0;
     public override bool DontAddToShop => !Settings.UnfinshedTowers == true || !Settings.CT == true;
     public override string Description => "Makes Sand to Stun and Slow the Bloons Down. Sanded bloons are immune to sharp damage (UNFINSHED)";
-
-
-
     public override string Icon => "SandMonkeyIcon";
     public override string Portrait => "SandMonkeyIcon";
 
@@ -52,6 +49,11 @@ public class SandMonkey : ModTower
         attackModel.weapons[0].rate = 1.5f;
         var weaponModel = towerModel.GetWeapon();
         weaponModel.projectile.AddBehavior(new SlowModel("SlowModel_", 0.0f, 1, "Stun:Weak", 9999999, "Stun", true, false, null, false, false, false, 0,0,false,false));
+    }
+
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.Desperado).towerIndex + 1;
     }
 }
 

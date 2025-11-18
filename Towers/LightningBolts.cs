@@ -52,6 +52,10 @@ public class LightningBolts : ModTower
     {
         return "LBDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.BeastHandler).towerIndex + 1;
+    }
 }
 
 

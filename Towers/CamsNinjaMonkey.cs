@@ -172,9 +172,9 @@ public class CamsNinjaMonkey : ModTower
             }
         }
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.NinjaMonkey).towerIndex + 1;
+    }
 }
-
-
-
-
 

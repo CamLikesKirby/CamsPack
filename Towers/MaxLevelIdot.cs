@@ -192,6 +192,10 @@ public class MaxLevelIdot : ModTower
     {
         return "MLIDisplay";
     }
+    public override int GetTowerIndex(List<TowerDetailsModel> towerSet)
+    {
+        return towerSet.First(model => model.towerId == TowerType.DartlingGunner).towerIndex + 1;
+    }
 }
 
 public class LongerHat : ModUpgrade<MaxLevelIdot>
@@ -214,7 +218,7 @@ public class SpikeyHat : ModUpgrade<MaxLevelIdot>
     public override string Portrait => "LuigiIcon";
     public override int Path => TOP;
     public override int Tier => 2;
-    public override int Cost => 620;
+    public override int Cost => 600;
     public override string Description => "Max's Hat Does 2 More Damage";
 
     public override void ApplyUpgrade(TowerModel towerModel)
@@ -246,7 +250,7 @@ public class Mafia : ModUpgrade<MaxLevelIdot>
     public override int Path => TOP;
     public override int Tier => 4;
     public override int Cost => 6850;
-    public override string Description => "Max Gets Help From the Mafia to blow up and stun the bloons. They also make 370 Cash per round.";
+    public override string Description => "Max Gets Help From the Mafia to blow up and stun the bloons. They also make $370 per round.";
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
