@@ -1,14 +1,8 @@
-using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using Il2CppAssets.Scripts.Models.Towers;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
-using Il2CppAssets.Scripts.Unity;
-using Il2CppAssets.Scripts.Unity.Display;
 using MelonLoader;
-using System;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using CamsPack;
 using System.Collections.Generic;
@@ -47,5 +41,3 @@ public class SleepingMonkey : ModTower
         return towerSet.First(model => model.towerId == TowerType.BeastHandler).towerIndex + 1;
     }
 }
-
-

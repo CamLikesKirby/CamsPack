@@ -1,21 +1,12 @@
-using BananaGun;
-using BTD_Mod_Helper;
-using BTD_Mod_Helper.Api.Display;
-using BTD_Mod_Helper.Api.Enums;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using CamsPack;
-using Il2Cpp;
-using Il2CppAssets.Scripts.Models.GenericBehaviors;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Weapons;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
-using Il2CppAssets.Scripts.Unity.Display;
-using Il2CppSystem.Linq;
 using PathsPlusPlus;
 
 namespace Sabre;
@@ -228,7 +219,7 @@ public class Player3 : UpgradePlusPlus<SabrePath>
     public override string Icon => "Player3deep";
     public override string Portrait => "Wizard1";
 
-    public override string Description => "WAIT! DON'T LET SABRE OR PLAYER 3 NEAR EACHOTHER OR YOU WILL-";
+    public override string Description => "WAIT! DON'T LET SABRE AND PLAYER 3 NEAR EACHOTHER OR YOU WILL-";
 
     public override void ApplyUpgrade(TowerModel towerModel, int tier)
     {
@@ -251,4 +242,3 @@ public class Player3 : UpgradePlusPlus<SabrePath>
 
     }
 }
-

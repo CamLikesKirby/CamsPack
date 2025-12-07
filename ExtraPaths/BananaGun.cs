@@ -1,18 +1,11 @@
-using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Enums;
 using BTD_Mod_Helper.Extensions;
 using CamsPack;
-using Il2Cpp;
-using Il2CppAssets.Scripts.Models.GenericBehaviors;
 using Il2CppAssets.Scripts.Models.Towers;
-using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Weapons;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
-using Il2CppSystem.Linq;
 using PathsPlusPlus;
-using System.Linq;
 
 namespace BananaGun;
 public class Banan : ModDisplay

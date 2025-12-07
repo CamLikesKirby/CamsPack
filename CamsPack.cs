@@ -3,11 +3,8 @@ using BTD_Mod_Helper;
 using CamsPack;
 using Il2CppAssets.Scripts.Models.Towers;
 using PathsPlusPlus;
-using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Data;
 using BTD_Mod_Helper.Api.ModOptions;
-using BTD_Mod_Helper.Api.Towers;
-using System.Collections.Generic;
 [assembly: MelonInfo(typeof(CamsPack.CamsPack), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 

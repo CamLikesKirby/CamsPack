@@ -8,21 +8,12 @@ using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
 using MelonLoader;
-using System;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack.Behaviors;
 using BTD_Mod_Helper;
-using Il2CppAssets.Scripts.Utils;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
 using System.Linq;
 using Il2Cpp;
 using System.Collections.Generic;
-using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
 using Kirby;
 using CamsPack;
-using Il2CppAssets.Scripts.Models.Towers.Filters;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 

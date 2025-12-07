@@ -45,10 +45,6 @@ Q: You didn't make [insert tower] idea
 
 A: I did. I would have credited it if not
 
-The Towers:
-
-![](29-20-23-152915.png)
-
 (Requires Paths Plus Plus https://github.com/doombubbles/paths-plus-plus) All my mods are in one pack!
 
 [![Requires BTD6 Mod Helper](https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/banner.png)](https://github.com/gurrenm3/BTD-Mod-Helper#readme)

@@ -1,25 +1,18 @@
-using BananaGun;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using CamsPack;
 using Il2Cpp;
-using Il2CppAssets.Scripts.Data.Behaviors.Weapons;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Il2CppAssets.Scripts.Models.Towers.Weapons;
 using Il2CppAssets.Scripts.Models.TowerSets;
-using Il2CppAssets.Scripts.Simulation.Bloons.Behaviors;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
 using MelonLoader;
 using System.Collections.Generic;
 using System.Linq;
-using static Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors.SlowModel;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 

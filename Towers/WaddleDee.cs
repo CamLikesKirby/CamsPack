@@ -1,4 +1,3 @@
-using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
@@ -9,16 +8,10 @@ using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
 using MelonLoader;
-using PathsPlusPlus;
-using CamsPack;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using Il2Cpp;
-using Il2CppAssets.Scripts.Models.Towers.Filters;
-using BTD_Mod_Helper;
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 

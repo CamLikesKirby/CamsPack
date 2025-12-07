@@ -1,13 +1,7 @@
 using System.Collections.Generic;
-using Il2CppAssets.Scripts.Models.GenericBehaviors;
-using Il2CppAssets.Scripts.Models.Towers;
-using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
 using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Display;
-using BTD_Mod_Helper.Extensions;
-using UnityEngine;
-
 
 namespace ThanksgivingMonkey.Displays
 {

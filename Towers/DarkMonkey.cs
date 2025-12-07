@@ -6,7 +6,6 @@ using CamsPack;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.TowerSets;
@@ -14,9 +13,6 @@ using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Display;
 using Kirby;
 using MelonLoader;
-using System.Collections.Generic;
-using System.Linq;
-
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
@@ -508,20 +504,3 @@ public class ApexMemerMaster : ModParagonUpgrade<DarkMonkey>
         weaponModel.projectile.AddBehavior(new TravelStraitModel("TravelStraitModel_Projectile", 150, 1000));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
